@@ -14,13 +14,19 @@ const Mypet = () => {
         const ownerId = payload.id;
    useEffect(() => {
       if (ownerId) {
-  axios.get(`http://localhost:4000/api/pets/${ownerId}?q=${search}`)
+  axios.get(`${import.meta.env.VITE_API_URL}/${ownerId}?q=${search}`)
   
           .then((res) => setPets(res.data))
           .catch((err) => console.error(err));
       }
     }, [ownerId]);
   
+
+      
+
+
+
+
     // ✅ filter pets on client side
     const filteredPets = pets.filter((pet) =>
       pet.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -29,7 +35,7 @@ const Mypet = () => {
     );
     var delProduct = (_id) => {
   
-  axios.delete(`http://localhost:4000/delpet/${_id}`).then(() => {
+  axios.delete(`${import.meta.env.VITE_API_URL}/${_id}`).then(() => {
     
   });
 };
