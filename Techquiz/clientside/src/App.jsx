@@ -14,7 +14,7 @@ import Add_Faq from "./Components/AdminPanel/Add_Faq";
 import EditFaq from "./Components/AdminPanel/EditFaq";
 import Faqtable from "./Components/AdminPanel/Faqtable";
 import AdminProtectedRoutes from "./Components/AdminPanel/AdminProtectedRoutes";
-import AdminProfile from ".g/Components/AdminPanel/AdminProfile";
+import AdminProfile from "./Components/AdminPanel/AdminProfile";
 import ForgetPassword from "./Components/Auth/ForgetPassword";
 import Categories from "./Components/AdminPanel/Categories";
 import Add_categories from "./Components/AdminPanel/Add_categories";
