@@ -39,8 +39,8 @@ import Vieworders from "./Components/AdminPanel/Vieworders";
 import Orderdetails from "./Components/website/Orderdetails";
 import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
-import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes"
-import VetesprotectedRoutes from "./Components/vetesPanels/"
+import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes";
+import VetesprotectedRoutes from "./Components/vetesPanels/";
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
 
 import Veteindex from "./Components/vetesPanels/Veteindex"
