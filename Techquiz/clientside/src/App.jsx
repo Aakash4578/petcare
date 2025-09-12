@@ -39,11 +39,11 @@ import Vieworders from "./Components/AdminPanel/Vieworders";
 import Orderdetails from "./Components/website/Orderdetails";
 import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
-import LoginForShelterAndVetes from "./Components/Auth/Loginforshelterandvetes";
-import VetesprotectedRoutes from "./Components/vetesPanels/VetesprotectedRoutes";
+import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes"
+import VetesprotectedRoutes from "./Components/vetesPanels/"
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
-import Veteindex from "./Components/vetesPanels/Veteindex";
-import VetesLayout from "./Components/vetesPanels/VetesLayout";
+
+import Veteindex from "./Components/vetesPanels/Veteindex"
 import UpdatePet from "./Components/website/UpdatePet";
 import Appointment from "./Components/website/Appointment";
 import Vetesappointment from "./Components/vetesPanels/Vetesappointment";
@@ -63,11 +63,9 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
 <Route path="/website/products" element={<Products/>}></Route>
           
-      <Route path="website/ProductData/:id" element={<WerbsiteProductData/>}></Route> 
-     
-        
+      <Route path="website/ProductData/:id" element={<WerbsiteProductData/>}></Route>         
         <Route path="/login" element={<LoginRegister />}></Route>
-        <Route path="/loginforvetesShelter" element={<Loginforshelterandvetes />}></Route>
+        <Route path="/loginforvetesShelter" element={<Loginforshelterandvetes/>}></Route>
 
         <Route path="/contact" element={<Contactus />}></Route>
         <Route path="/Email-verify" element={<Emailverify />}></Route>
@@ -135,10 +133,7 @@ const App = () => {
             path="/admin/add_Animalshelter"
             element={<Add_AnimalShelter></Add_AnimalShelter>}
           ></Route>
-        
         </Route>
-        
-
 <Route  >
   <Route
             path="/vetes/profile"
