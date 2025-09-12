@@ -1,15 +1,13 @@
-require("dotenv").config();
 var mongoose = require("mongoose");
+require("dotenv").config(); // 👈 ye sabse top par hona chahiye
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => {
+const uri = process.env.MONGO_URI;
+
+mongoose.connect(uri)
+  .then(() => {
     console.log("✅ Database Connected");
-})
-.catch((err) => {
-    console.log("❌ Database Connection Failed:", err);
-});
+  })
+  .catch((err) => {
+    console.error("❌ Database Connection Failed:", err);
+  });
 
-module.exports = mongoose;
