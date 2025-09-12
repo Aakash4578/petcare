@@ -38,7 +38,7 @@ import Orderdetails from "./Components/website/Orderdetails";
 import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
 // Corrected
-import LoginForShelterAndVetes from "./Components/Auth/LoginForShelterAndVetes";
+import LoginShelter from "./Components/Auth/LoginShelter";
 import VetesprotectedRoutes from "./Components/vetesPanels";
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
 import Veteindex from "./Components/vetesPanels/Veteindex"
@@ -63,7 +63,7 @@ const App = () => {
           
       <Route path="website/ProductData/:id" element={<WerbsiteProductData/>}></Route>         
         <Route path="/login" element={<LoginRegister />}></Route>
-        <Route path="/loginforvetesShelter" element={<LoginForShelterAndVetes />} />
+        <Route path="/loginforvetesShelter" element={<LoginShelter />} />
 
         <Route path="/contact" element={<Contactus />}></Route>
         <Route path="/Email-verify" element={<Emailverify />}></Route>

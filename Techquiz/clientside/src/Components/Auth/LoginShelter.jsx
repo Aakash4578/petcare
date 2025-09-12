@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 
-const Loginforshelterandvetes = () => {
+const LoginShelter = () => {
   const navigate = useNavigate();
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -172,4 +172,4 @@ const Loginforshelterandvetes = () => {
   );
 };
 
-export default Loginforshelterandvetes;
+export default LoginShelter;
