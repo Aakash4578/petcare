@@ -24,7 +24,7 @@ import Add_product from "./Components/AdminPanel/Add_product";
 import ProductsTable from "./Components/AdminPanel/ProductsTable";
 import Viewproducts from "./Components/AdminPanel/Viewproducts";
 import EditProduct from "./Components/AdminPanel/Editproducts";
-import Veterinarian from "./Components/AdminPanel/Veterinarian ";
+import Veterinarian from "./Components/AdminPanel/Veterinarian"; // ✅
 import Add_veterinarians from "./Components/AdminPanel/Add_veterinarians";
 import AnimalShelter from "./Components/AdminPanel/AnimalShelter";
 import Add_AnimalShelter from "./Components/AdminPanel/Add_AnimalShelter";
@@ -39,7 +39,10 @@ import Vieworders from "./Components/AdminPanel/Vieworders";
 import Orderdetails from "./Components/website/Orderdetails";
 import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
-// import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes";
+// Corrected
+import LoginForShelterAndVetes from "./Components/Auth/LoginForShelterAndVetes";
+
+
 import VetesprotectedRoutes from "./Components/vetesPanels/";
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
 
@@ -56,7 +59,6 @@ import Shelter from "./Components/AnimalShelter/Shelter";
 import Shelterprofile from "./Components/AnimalShelter/shelterprofile";
 import Heathhistory from "./Components/website/Heathhistory";
 import MyAppointments from "./Components/website/Myappointment";
-import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes";
 const App = () => {
   return (
     <div>
@@ -66,7 +68,7 @@ const App = () => {
           
       <Route path="website/ProductData/:id" element={<WerbsiteProductData/>}></Route>         
         <Route path="/login" element={<LoginRegister />}></Route>
-        <Route path="/loginforvetesShelter" element={<Loginforshelterandvetes/>}></Route>
+        <Route path="/loginforvetesShelter" element={<LoginForShelterAndVetes />} />
 
         <Route path="/contact" element={<Contactus />}></Route>
         <Route path="/Email-verify" element={<Emailverify />}></Route>
