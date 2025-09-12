@@ -11,11 +11,10 @@ import UserDetails from "./Components/AdminPanel/UserDetails";
 import Dashboard from "./Components/AdminPanel/Dashboard";
 import ContactTable from "./Components/AdminPanel/ContactTable";
 import Add_Faq from "./Components/AdminPanel/Add_Faq";
-
 import EditFaq from "./Components/AdminPanel/EditFaq";
 import Faqtable from "./Components/AdminPanel/Faqtable";
 import AdminProtectedRoutes from "./Components/AdminPanel/AdminProtectedRoutes";
-import AdminProfile from "./Components/AdminPanel/AdminProfile";
+import AdminProfile from ".g/Components/AdminPanel/AdminProfile";
 import ForgetPassword from "./Components/Auth/ForgetPassword";
 import Categories from "./Components/AdminPanel/Categories";
 import Add_categories from "./Components/AdminPanel/Add_categories";
@@ -29,7 +28,6 @@ import Add_veterinarians from "./Components/AdminPanel/Add_veterinarians";
 import AnimalShelter from "./Components/AdminPanel/AnimalShelter";
 import Add_AnimalShelter from "./Components/AdminPanel/Add_AnimalShelter";
 import Products from "./Components/website/Products";
-
 import WerbsiteProductData from "./Components/website/WerbsiteProductData";
 import Wishlist from "./Components/website/Wishlist";
 import Carttable from "./Components/website/Carttable";
@@ -41,11 +39,8 @@ import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
 // Corrected
 import LoginForShelterAndVetes from "./Components/Auth/LoginForShelterAndVetes";
-
-
-import VetesprotectedRoutes from "./Components/vetesPanels/";
+import VetesprotectedRoutes from "./Components/vetesPanels";
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
-
 import Veteindex from "./Components/vetesPanels/Veteindex"
 import UpdatePet from "./Components/website/UpdatePet";
 import Appointment from "./Components/website/Appointment";
