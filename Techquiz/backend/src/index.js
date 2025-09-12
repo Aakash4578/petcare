@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 var ContactUs = require("./Models/Contact");
 var faq = require("./Models/Faq");
-var port = 4000;
+const port = process.env.PORT || 4000;
 var jwt = require("jsonwebtoken");
 var user = require("./Models/users");
 var order_Model= require("./Models/orders");
