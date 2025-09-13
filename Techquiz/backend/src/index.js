@@ -172,18 +172,18 @@ app.post("/register", async (req, res) => {
     });
 
     // for sending the Email
-    var mailOptions = {
-      from: "akashwaghella@gmail.com",
-      to: email,
-      subject: "welcome to MyWebsite",
-      text: `weclome to MyWebsite.your account is created With email id :${email} and please verify the account with this  OPT  ${Otp} `,
-    };
-    await transporter.sendMail(mailOptions);
+    // var mailOptions = {
+    //   from: "akashwaghella@gmail.com",
+    //   to: email,
+    //   subject: "welcome to MyWebsite",
+    //   text: `weclome to MyWebsite.your account is created With email id :${email} and please verify the account with this  OPT  ${Otp} `,
+    // };
+    // await transporter.sendMail(mailOptions);
 
-    return res.json({
-      success: true,
-      massege: "user is registered !",
-    });
+    // return res.json({
+    //   success: true,
+    //   massege: "user is registered !",
+    // });
   } catch (error) {
     return res.json({ success: false, massege: error.message });
   }
