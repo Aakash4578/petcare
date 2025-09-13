@@ -59,6 +59,8 @@ import AdoptList from "./Components/AnimalShelter/AdoptList";
 import ShelterpetsEdit from "./Components/AnimalShelter/ShelterpetsEdit";
 import Animaldashboard from "./Components/AnimalShelter/Animaldashboard";
 import Vetesdashboard from "./Components/vetesPanels/Vetesdashboard";
+import Web_pets from "./Components/website/Web_pets";
+import AdoptPetForm from "./Components/website/AdoptPetForm";
 
 
 
@@ -78,6 +80,10 @@ const App = () => {
         <Route path="/Email-verify" element={<Emailverify />}></Route>
         <Route path="/ForgetPassword" element={<ForgetPassword />}></Route>
 <Route path="/products" element={<Products />}></Route>
+<Route path="/web/pet" element={<Web_pets />}></Route>
+petform
+
+<Route path="/petform" element={<AdoptPetForm />}></Route>
         {/* User Protected-Routes */}
         <Route element={<UserProtectedRoute />}>
 <Route path="/orders" element={<Orderdetails />}></Route>
