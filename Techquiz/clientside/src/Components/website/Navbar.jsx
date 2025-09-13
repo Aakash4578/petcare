@@ -52,6 +52,7 @@ function Navbar() {
 									<ul class="menu-list">
 										<li><Link to={"/appiontment"}>Appointment</Link></li>
 										<li><Link to={"/contact"}>Contact us </Link></li>
+										<li><Link to={"/abutus"}>ABOUTS </Link></li>
 
 									</ul>
 								</nav>

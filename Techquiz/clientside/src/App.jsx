@@ -61,6 +61,7 @@ import Animaldashboard from "./Components/AnimalShelter/Animaldashboard";
 import Vetesdashboard from "./Components/vetesPanels/Vetesdashboard";
 import Web_pets from "./Components/website/Web_pets";
 import AdoptPetForm from "./Components/website/AdoptPetForm";
+import About from "./Components/website/About";
 
 
 
@@ -76,6 +77,7 @@ const App = () => {
         <Route path="/login" element={<LoginRegister />}></Route>
         <Route path="/loginforvetesShelter" element={<Loginforshelterandvetes/>}></Route>
 
+        <Route path="/abutus" element={<About/>}></Route>
         <Route path="/contact" element={<Contactus />}></Route>
         <Route path="/Email-verify" element={<Emailverify />}></Route>
         <Route path="/ForgetPassword" element={<ForgetPassword />}></Route>
