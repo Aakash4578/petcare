@@ -36,7 +36,7 @@ const ForgetPassword = () => {
     } else {
       try {
         const response = await axios.put(
-          "http://localhost:4000/forgetPassword",
+          `${import.meta.env.VITE_API_URL}/forgetPassword`,
           forgetPassword
         );
         toast.success("Your password has been updated successfully!", {

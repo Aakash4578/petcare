@@ -34,8 +34,8 @@ const ShelterTops = ({ toggleSidebar }) => {
               }, [userToken]);
     
                 function logout() {
-        sessionStorage.removeItem("vetesLogined");
-        axios.get("http://localhost:4000/logout");
+        sessionStorage.removeItem("animalsehlterLogined");
+        axios.get(`${import.meta.env.VITE_API_URL}/logout`);
         nav("/");
       }
   return (

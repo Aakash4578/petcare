@@ -19,7 +19,7 @@ const Addheathrecord = () => {
 
   // Fetch pets/appointments
   function userFetch() {
-    axios.get(`http://localhost:4000/fetchappoint/${id}`).then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fetchappoint/${id}`).then((res) => {
       SetUserData(res.data);
     });
   }
@@ -64,7 +64,7 @@ const validate = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/vetes/addHealthRecord",
+        `${import.meta.env.VITE_API_URL}/addHealthRecord`,
         formData
       );
 

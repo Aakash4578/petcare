@@ -13,19 +13,19 @@ const Wishlist = () => {
     const payload = JSON.parse(atob(tokenParts[1]));
     const id = payload.id;
 
-    axios.get(`http://localhost:4000/Wishlist/${id}`).then((resp) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/Wishlist/${id}`).then((resp) => {
       setProduct(resp.data);
     });
   }, []);
 
   const delProduct = (id) => {
-    axios.delete(`http://localhost:4000/delWishProduct/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/delWishProduct/${id}`).then(() => {
       const userToken = sessionStorage.getItem("userLogin");
       const tokenParts = userToken.split(".");
       const payload = JSON.parse(atob(tokenParts[1]));
       const userId = payload.id;
 
-      axios.get(`http://localhost:4000/Wishlist/${userId}`).then((resp) => {
+      axios.get(`${import.meta.env.VITE_API_URL}/Wishlist/${userId}`).then((resp) => {
         setProduct(resp.data);
       });
     });

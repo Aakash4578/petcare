@@ -77,7 +77,7 @@ const Add_product = () => {
         values.Price=Number(values.Price);
         values.quantity=Number(values.quantity);
         var response = await axios.post(
-          "http://localhost:4000/add_Product",
+          `${import.meta.env.VITE_API_URL}/add_Product`,
           values,
           { headers: { "Content-Type": "multipart/form-data" }}
         );

@@ -9,7 +9,7 @@ const WerbsiteProductData=()=> {
     var {id}=useParams()
     
     var product_Data=()=>{
-        axios.get(`http://localhost:4000/product_data/${id}`).then((resp)=>{
+        axios.get(`${import.meta.env.VITE_API_URL}/product_data/${id}`).then((resp)=>{
             SetProduct(resp.data);
             console.log(resp.data)
         })
@@ -49,7 +49,7 @@ console.log(productData.Price,quantity,productData.name,productData.Image);
 	
       
 
-      const response = await axios.post("http://localhost:4000/addToCart", cartItem);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/addToCart`, cartItem);
 
       if (response.data.message) {
         toast.success(response.data.message, {

@@ -25,7 +25,7 @@ const AdminProfile = () => {
 
   useEffect(() => {
     if (userToken) {
-      axios.get(`http://localhost:4000/profile/${id}`).then((resp) => {
+      axios.get(`${import.meta.env.VITE_API_URL}/profile/${id}`).then((resp) => {
         UserReg(resp.data);
         console.log(resp.data);
       });
@@ -87,7 +87,7 @@ const AdminProfile = () => {
       SetError(newError);
     } else {
       axios
-        .put(`http://localhost:4000/updateuser/${id}`, reg, {
+        .put(`${import.meta.env.VITE_API_URL}/updateuser/${id}`, reg, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -146,7 +146,7 @@ const AdminProfile = () => {
       });
      
       axios
-        .put(`http://localhost:4000/updatePassword/${id}`, password_Data);
+        .put(`${import.meta.env.VITE_API_URL}/updatePassword/${id}`, password_Data);
       
           toast.success("your password is updated now !");
           SetPassword({

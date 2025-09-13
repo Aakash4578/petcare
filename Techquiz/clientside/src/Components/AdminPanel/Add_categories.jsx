@@ -24,7 +24,7 @@ var errors={name: "", status: ""}
     else{
     try {
       const response = await axios.post(
-        "http://localhost:4000/add_category",
+        `${import.meta.env.VITE_API_URL}/add_category`,
         categoriesInserted
       );
       if (response.data.success) {

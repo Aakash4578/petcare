@@ -11,7 +11,7 @@ const [query, setQuery] = useState("");
 
 const fetchFaqs = async () => {
   try {
-    const response = await axios.get("http://localhost:4000/faq_fetch");
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/faq_fetch`);
     setFaqs(response.data);
   } catch (error) {
     console.error(error);
@@ -20,7 +20,7 @@ const fetchFaqs = async () => {
 
 const handleDelete = async (id) => {
   try {
-    await axios.delete(`http://localhost:4000/faq_del/${id}`);
+    await axios.delete(`${import.meta.env.VITE_API_URL}/faq_del/${id}`);
     toast.error("The Faq is deleted now!", {
       position: "top-right",
     });
@@ -31,7 +31,7 @@ const handleDelete = async (id) => {
 
 const searchFaqs = async () => {
   try {
-    const response = await axios.get(`http://localhost:4000/faq_search/search?q=${query}`);
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/faq_search/search?q=${query}`);
     setFaqs(response.data);
   } catch (error) {
     console.error(error);

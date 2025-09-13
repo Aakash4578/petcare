@@ -12,20 +12,13 @@ const Vetesappointment = () => {
   const id = payload.id;
      var [user, SetUserData] = useState([]);
       function userFetch() {
-        axios.get(`http://localhost:4000/fetchappoint/${id}`).then((res) => {
+        axios.get(`${import.meta.env.VITE_API_URL}/fetchappoint/${id}`).then((res) => {
           SetUserData(res.data);
         });
       }
-    
-      function userStatus(id) {
-        axios.put(`http://localhost:4000/statususer/${id}`).then(() => {
-          toast.success("The user status is upated now ", {
-            position: "top-right",
-          });
-        });
-      }
+ 
       function userDelete(id) {
-        axios.delete(`http://localhost:4000/delapp/${id}`).then(() => {
+        axios.delete(`${import.meta.env.VITE_API_URL}/delapp/${id}`).then(() => {
           toast.error("The appointment  is deleted now ", { position: "top-right" });
         });
       }
@@ -33,7 +26,7 @@ const Vetesappointment = () => {
       var search_user = async () => {
         try {
           const resp = await fetch(
-            `http://localhost:4000/search_app/${id}/search?q=${query}`
+            `${import.meta.env.VITE_API_URL}/search_app/${id}/search?q=${query}`
           );
           const data = await resp.json();
           SetUserData(data);
@@ -50,7 +43,7 @@ const Vetesappointment = () => {
         }
       });
          var statusUpdate=(id,status)=>{
-       axios.put(`http://localhost:4000/app_Status/${id}`,{status:status}).then(() => {
+       axios.put(`${import.meta.env.VITE_API_URL}/app_Status/${id}`,{status:status}).then(() => {
           toast.success("The appointment status is updated now !", {
             position: "top-right",
           });

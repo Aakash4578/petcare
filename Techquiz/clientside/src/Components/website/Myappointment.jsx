@@ -13,7 +13,7 @@ const userToken = sessionStorage.getItem("userLogin");
     const fetchAppointments = async () => {
       
         const response = await axios.get(
-          `http://localhost:4000/myappointment/${ownerId}`
+          `${import.meta.env.VITE_API_URL}/myappointment/${ownerId}`
         );
      
     };

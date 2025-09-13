@@ -51,7 +51,7 @@ if (!form.pet_img) {
   };
 useEffect(() => {
   axios
-    .get(`http://localhost:4000/fetchpet/${id}`)
+    .get(`${import.meta.env.VITE_API_URL}/fetchpet/${id}`)
     .then((res) => {
       console.log(res.data)
       setFormData({

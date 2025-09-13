@@ -16,7 +16,7 @@ const UserProfile = () => {
   useEffect(() => {
     if (userToken) {
       axios
-        .get(`http://localhost:4000/profile/${id}`)
+        .get(`${import.meta.env.VITE_API_URL}/profile/${id}`)
         .then((res) => {
           UserReg(res.data);
         });

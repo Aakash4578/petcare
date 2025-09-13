@@ -56,7 +56,7 @@ function Contactus() {
     if (newError.name || newError.email || newError.contact_number||newError.message) {
       SetError(newError);
     } else {
-      axios.post("http://localhost:4000/addcontact", contactData).then(() => {
+      axios.post(`${import.meta.env.VITE_API_URL}/addcontact`, contactData).then(() => {
         toast.success("Thankyou for contact us we response as soon as possible !", {
           position: "top-right",
         });

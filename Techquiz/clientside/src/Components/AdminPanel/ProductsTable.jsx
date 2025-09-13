@@ -9,18 +9,18 @@ import { toast } from 'react-toastify';
 const ProductsTable = () => {
   var [myprodut, SetProduct] = useState([]);
   var lowestTohighest = () => {
-    axios.get("http://localhost:4000/lowestTohigh").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/lowestTohigh`).then((res) => {
       SetProduct(res.data);
     });
   };
 
   var fetchData = () => {
-    axios.get("http://localhost:4000/productDetails").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/productDetails`).then((res) => {
       SetProduct(res.data);
     });
   };
   var highestTtlowest = () => {
-    axios.get("http://localhost:4000/highTolowest").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/highTolowest`).then((res) => {
       SetProduct(res.data);
     });
   };
@@ -28,7 +28,7 @@ const ProductsTable = () => {
 
 
   var ProductDel = (id) => {
-    axios.delete(`http://localhost:4000/productDel/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/productDel/${id}`).then(() => {
       fetchData();
       toast.error("the product is Deleted !")
     });
@@ -37,7 +37,7 @@ const ProductsTable = () => {
     var searchfunationality = async () => {
       try {
         const resp = await fetch(
-          `http://localhost:4000/search_product/search?q=${query}`
+          `${import.meta.env.VITE_API_URL}/search_product/search?q=${query}`
         );
         const data = await resp.json();
         SetProduct(data);
@@ -56,7 +56,7 @@ const ProductsTable = () => {
       },[query]);
       
   function productStatus(id) {
-    axios.put(`http://localhost:4000/statusproducts/${id}`).then(() => {
+    axios.put(`${import.meta.env.VITE_API_URL}/statusproducts/${id}`).then(() => {
       toast.success("The user status is upated now ", {
         position: "top-right",
       });

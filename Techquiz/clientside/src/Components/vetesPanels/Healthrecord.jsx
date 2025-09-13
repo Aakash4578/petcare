@@ -12,7 +12,7 @@ const Healthrecord = () => {
   const id = payload.id;
      var [user, SetUserData] = useState([]);
       function userFetch() {
-        axios.get(`http://localhost:4000/vetesrecord/${id}`).then((res) => {
+        axios.get(`${import.meta.env.VITE_API_URL}/vetesrecord/${id}`).then((res) => {
           SetUserData(res.data);
            console.log(res.data);
         });
@@ -20,7 +20,7 @@ const Healthrecord = () => {
     
       
       function userDelete(id) {
-        axios.delete(`http://localhost:4000/delhealth/${id}`).then(() => {
+        axios.delete(`${import.meta.env.VITE_API_URL}/delhealth/${id}`).then(() => {
           toast.error("The  health record is deleted now ", { position: "top-right" });
         });
       }
@@ -28,7 +28,7 @@ const Healthrecord = () => {
       var search_user = async () => {
         try {
           const resp = await fetch(
-            `http://localhost:4000/search_healthrecord/${id}/search?q=${query}`
+            `${import.meta.env.VITE_API_URL}/${id}/search?q=${query}`
           );
           const data = await resp.json();
           SetUserData(data);

@@ -19,13 +19,13 @@ const fetchCartData = () => {
   const payload = JSON.parse(atob(tokenParts[1]));
   const userId = payload.id;
 
-  axios.get(`http://localhost:4000/cartDetail/${userId}`).then((resp) => {
+  axios.get(`${import.meta.env.VITE_API_URL}/cartDetail/${userId}`).then((resp) => {
     SetProduct(resp.data);
   });
 };
 
 var delProduct = (cartItemId) => {
-  axios.delete(`http://localhost:4000/cartDel/${cartItemId}`).then(() => {
+  axios.delete(`${import.meta.env.VITE_API_URL}/cartDel/${cartItemId}`).then(() => {
     fetchCartData(); // ✅ delete ke baad dobara fetch
   });
 };

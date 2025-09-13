@@ -38,7 +38,7 @@ const LoginRegister = () => {
       });
       try {
         const response = await axios.post(
-          "http://localhost:4000/login",
+          `${import.meta.env.VITE_API_URL}/login`,
           loginedUser
         );
         if (response.data.success == true) {
@@ -128,10 +128,10 @@ const LoginRegister = () => {
     } else {
       try {
         var response = await axios.post(
-          "http://localhost:4000/register",
+          `${import.meta.env.VITE_API_URL}/register`,
           register
         );
-        if (response.data.success) {
+if (response.data.success) {
           toast.success("The account is created !");
           Setregisiter({
             email: "",

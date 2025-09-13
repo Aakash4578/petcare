@@ -29,7 +29,7 @@ const Checkout = () => {
 
   // fetch cart
   function fetch_cart() {
-    axios.get(`http://localhost:4000/cartDetail/${userLogined}`).then((resp) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/cartDetail/${userLogined}`).then((resp) => {
       SetProduct(resp.data);
     });
   }
@@ -38,7 +38,7 @@ const Checkout = () => {
     fetch_cart();
     if (userToken) {
       axios
-        .get(`http://localhost:4000/profile/${userLogined}`)
+        .get(`${import.meta.env.VITE_API_URL}/profile/${userLogined}`)
         .then((res) => {
           UserReg(res.data);
         });

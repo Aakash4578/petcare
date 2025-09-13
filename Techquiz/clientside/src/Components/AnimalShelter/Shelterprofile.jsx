@@ -11,7 +11,7 @@ const Shelterprofile = () => {
   const id = payload.id;
    useEffect(() => {
       if (userToken) {
-        axios.get(`http://localhost:4000/profileshelter/${id}`).then((resp) => {
+        axios.get(`${import.meta.env.VITE_API_URL}/profileshelter/${id}`).then((resp) => {
     Add_animalData(resp.data);
         
         });
@@ -87,7 +87,7 @@ const Shelterprofile = () => {
     } else {
       try {
         const response = await axios.post(
-          `http://localhost:4000/updateshelter/${id}`,
+          `${import.meta.env.VITE_API_URL}/updateshelter/${id}`,
           animal
         );
 

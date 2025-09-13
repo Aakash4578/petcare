@@ -22,7 +22,7 @@ const EditRecord = () => {
   // Fetch pets/appointments
   const userFetch = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/fetchappoint/${vetId}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/fetchappoint/${vetId}`);
       SetUserData(res.data);
     } catch (error) {
       console.error("Fetch Appointments Error:", error);

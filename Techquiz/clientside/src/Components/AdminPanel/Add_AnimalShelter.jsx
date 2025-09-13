@@ -74,7 +74,7 @@ const Add_AnimalShelter = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:4000/register_shelter",
+          `${import.meta.env.VITE_API_URL}/register_shelter`,
           animal
         );
 

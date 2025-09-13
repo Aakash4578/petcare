@@ -82,7 +82,7 @@ if (!form.pet_img) {
     formData.append("pet_img", form.pet_img);
 
     try {
-      await axios.post("http://localhost:4000/api/pets", formData, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/pets`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

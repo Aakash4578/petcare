@@ -13,7 +13,7 @@ const Orderdetails = () => {
 
   const fetchOrders = () => {
     axios
-      .get(`http://localhost:4000/fetchOrderByUser/${userLogined}`)
+      .get(`${import.meta.env.VITE_API_URL}/fetchOrderByUser/${userLogined}`)
       .then((res) => {
         setOrders(res.data);
       });
@@ -24,7 +24,7 @@ const Orderdetails = () => {
   }, []);
 
   function cancelOrder(id) {
-    axios.delete(`http://localhost:4000/fetchOrderdel/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/fetchOrderdel/${id}`).then(() => {
       fetchOrders();
     });
   }

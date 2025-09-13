@@ -11,7 +11,7 @@ const Products = () => {
 	var [myprodut, SetProduct] = useState([]);
 
 	var fetchData = () => {
-		axios.get("http://localhost:4000/website/productDetails").then((res) => {
+		axios.get(`${import.meta.env.VITE_API_URL}/website/productDetails`).then((res) => {
 			SetProduct(res.data);
 		});
 	};
@@ -43,7 +43,7 @@ const tokenParts = userToken.split(".");
 		};
 		 
 		try {
-			const response = await axios.post('http://localhost:4000/website/addWishList', wishList);
+			const response = await axios.post(`${import.meta.env.VITE_API_URL}/website/addWishList`, wishList);
 			if (response.data.success) {
 				toast.success(response.data.message);
 				const wishList = {

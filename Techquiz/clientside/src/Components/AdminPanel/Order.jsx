@@ -7,13 +7,13 @@ const Order = () => {
        const [query, setQuery] = useState("");
           var [cont, listcont] = useState([]);
       function fetchCon() {
-        axios.get("http://localhost:4000/fetchOrder").then((resp) => {
+        axios.get(`${import.meta.env.VITE_API_URL}/fetchOrder`).then((resp) => {
           listcont(resp.data);
         });
       }
     
      var statusUpdate=(id,status)=>{
-       axios.put(`http://localhost:4000/Order_Status/${id}`,{status:status}).then(() => {
+       axios.put(`${import.meta.env.VITE_API_URL}/Order_Status/${id}`,{status:status}).then(() => {
           toast.error("The delivery status is updated now !", {
             position: "top-right",
           });
@@ -21,7 +21,7 @@ const Order = () => {
       
      } 
         function delCon(id) {
-        axios.delete(`http://localhost:4000/fetchOrderdel/${id}`).then(() => {
+        axios.delete(`${import.meta.env.VITE_API_URL}/fetchOrderdel/${id}`).then(() => {
           toast.error("The destination is deleted now !", {
             position: "top-right",
           });
@@ -29,7 +29,7 @@ const Order = () => {
       }
       const searchContact = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/search_order/search?q=${query}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/search_order/search?q=${query}`);
         listcont(response.data);
       } catch (error) {
         console.error(error);

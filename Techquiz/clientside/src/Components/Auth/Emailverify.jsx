@@ -15,7 +15,7 @@ const Emailverify = () => {
   const verifyAccount = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/verify_Account", verifyData);
+      const response = await axios.post(`{import.meta.env.VITE_API_URL}/verify_Account`, verifyData);
       if (response.data.success) {
         toast.success("Account verified successfully!", {
           position: "top-right",

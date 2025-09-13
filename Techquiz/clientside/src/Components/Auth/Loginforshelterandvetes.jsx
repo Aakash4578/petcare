@@ -32,7 +32,7 @@ const LoginShelter = () => {
     setVetError({ email: "", hash_password: "" });
 
     try {
-      const response = await axios.post("http://localhost:4000/login_vets", vetUser);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login_vets`, vetUser);
       if (response.data.success) {
         sessionStorage.setItem("vetesLogined", JSON.stringify(response.data.messege));
         navigate("/vetes");

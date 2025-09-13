@@ -65,7 +65,7 @@ const VetesProfile = () => {
       } else {
         try {
           const response = await axios.put(
-            `http://localhost:4000/UpdateVetes/${id }`,
+            `${import.meta.env.VITE_API_URL}/UpdateVetes/${id }`,
             vates
           );
       
@@ -92,7 +92,7 @@ const VetesProfile = () => {
   const id = payload.id;
    useEffect(() => {
       if (userToken) {
-        axios.get(`http://localhost:4000/profileVetes/${id}`).then((resp) => {
+        axios.get(`${import.meta.env.VITE_API_URL}/profileVetes/${id}`).then((resp) => {
          Add_vatesData (resp.data);
         
         });

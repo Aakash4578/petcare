@@ -8,14 +8,14 @@ const ContactTable = () => {
     const [query, setQuery] = useState("");
       var [cont, listcont] = useState([]);
   function fetchCon() {
-    axios.get("http://localhost:4000/contacts").then((resp) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/contacts`).then((resp) => {
       listcont(resp.data);
     });
   }
 
 
     function delCon(id) {
-    axios.delete(`http://localhost:4000/delcon/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/delcon/${id}`).then(() => {
       toast.error("The contact is deleted now !", {
         position: "top-right",
       });
@@ -23,7 +23,7 @@ const ContactTable = () => {
   }
   const searchContact = async () => {
   try {
-    const response = await axios.get(`http://localhost:4000/search_contact/search?q=${query}`);
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/search_contact/search?q=${query}`);
     listcont(response.data);
   } catch (error) {
     console.error(error);

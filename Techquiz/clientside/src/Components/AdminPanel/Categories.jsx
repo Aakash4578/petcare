@@ -7,25 +7,25 @@ import { toast } from "react-toastify";
 const Categories = () => {
   var [categories, SetCategory] = useState([]);
   var fetch_data = () => {
-    axios.get("http://localhost:4000/fetchCategory").then((resp) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fetchCategory`).then((resp) => {
       SetCategory(resp.data);
     });
   };
 
 
    function cateStatus(id) {
-    axios.put(`http://localhost:4000/statusCate/${id}`).then(() => {
+    axios.put(`${import.meta.env.VITE_API_URL}/statusCate/${id}`).then(() => {
       toast.success("The categories status is upated now ", { position: "top-right"});
  });}
    function cateDelete(id) {
-    axios.delete(`http://localhost:4000/category_del/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/category_del/${id}`).then(() => {
       toast.error("The categories  is deleted now ", { position: "top-right"});
  });}
      var [query, Setquery] = useState("");
    var searchFuntionality = async () => {
      try {
        const resp = await fetch(
-         `http://localhost:4000/search_Cate/search?q=${query}`
+         `${import.meta.env.VITE_API_URL}/search_Cate/search?q=${query}`
        );
        const data = await resp.json();
        SetCategory(data);

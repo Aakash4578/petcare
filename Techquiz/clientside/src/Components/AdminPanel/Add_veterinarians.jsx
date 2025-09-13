@@ -60,7 +60,7 @@ const Add_veterinarians = () => {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:4000/register_vets",
+          `${import.meta.env.VITE_API_URL}/register_vets`,
           vates
         );
         if (response.data.success) {

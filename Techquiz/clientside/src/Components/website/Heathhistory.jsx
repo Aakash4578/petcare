@@ -11,7 +11,7 @@ var {petId}=useParams()
 
     const fetchHealthHistory = async () => {
       const response = await axios.get(
-          `http://localhost:4000/healthHistory/${petId}`
+          `${import.meta.env.VITE_API_URL}/healthHistory/${petId}`
         );
         setHealthRecords(response.data)
         console.log(response.data)

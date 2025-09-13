@@ -19,7 +19,7 @@ const EditFaq = () => {
     useEffect(() => {
   
     axios
-      .get(`http://localhost:4000/faq_find/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/faq_find/${id}`)
       .then((res) => {
         setForm({
           subject: res.data.subject,
@@ -57,7 +57,7 @@ const EditFaq = () => {
     }
     else{
  try {
-      const response = await axios.put(`http://localhost:4000/faq_edit/${id}`, {
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/faq_edit/${id}`, {
         subject,
         faqQuestion,
         faqAnswer,

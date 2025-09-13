@@ -7,20 +7,20 @@ import { toast, ToastContainer } from "react-toastify";
 const UserDetails = () => {
   var [user, SetUserData] = useState([]);
   function userFetch() {
-    axios.get("http://localhost:4000/fetch_user").then((res) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fetch_user`).then((res) => {
       SetUserData(res.data);
     });
   }
 
   function userStatus(id) {
-    axios.put(`http://localhost:4000/statususer/${id}`).then(() => {
+    axios.put(`${import.meta.env.VITE_API_URL}/statususer/${id}`).then(() => {
       toast.success("The user status is upated now ", {
         position: "top-right",
       });
     });
   }
   function userDelete(id) {
-    axios.delete(`http://localhost:4000/deluser/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/deluser/${id}`).then(() => {
       toast.error("The user  is deleted now ", { position: "top-right" });
     });
   }
@@ -28,7 +28,7 @@ const UserDetails = () => {
   var search_user = async () => {
     try {
       const resp = await fetch(
-        `http://localhost:4000/search_user/search?q=${query}`
+        `${import.meta.env.VITE_API_URL}h/search_user/search?q=${query}`
       );
       const data = await resp.json();
       SetUserData(data);

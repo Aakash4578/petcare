@@ -28,7 +28,7 @@ var errors={name: "", status: ""}
     else{
     
       const response =  axios.put(
-        `http://localhost:4000/update_Cate/${id}`,
+        `${import.meta.env.VITE_API_URL}/update_Cate/${id}`,
         categoriesInserted
       );
         toast.success("Category is updated Now !");

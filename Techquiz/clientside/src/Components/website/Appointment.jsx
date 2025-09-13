@@ -32,7 +32,7 @@ const Appointment = () => {
   // 🔹 Fetch pets for logged-in user
   const fetchPets = () => {
     axios
-      .get(`http://localhost:4000/api/pets/${ownerId}`)
+      .get(`${import.meta.env.VITE_API_URL}/api/pets/${ownerId}`)
       .then((res) => setPets(res.data))
       .catch((err) => console.error(err));
   };

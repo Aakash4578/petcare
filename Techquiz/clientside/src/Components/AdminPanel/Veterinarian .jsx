@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Veterinarian  = () => {
     var [vetes, SetUservetes] = useState([]);
     function vetesFetch() {
-      axios.get("http://localhost:4000/fetch_vets").then((res) => {
+      axios.get(`${import.meta.env.VITE_API_URL}/fetch_vets`).then((res) => {
         SetUservetes(res.data);
       });
     }
@@ -15,7 +15,7 @@ const Veterinarian  = () => {
   var search_funtionlity = async () => {
     try {
       const resp = await fetch(
-        `http://localhost:4000/search_vetes/search?q=${query}`
+        `${import.meta.env.VITE_API_URL}/search_vetes/search?q=${query}`
       );
       const data = await resp.json();
       SetUservetes(data);
@@ -32,12 +32,12 @@ const Veterinarian  = () => {
     }
   });
     function vetsDel(id) {
-    axios.delete(`http://localhost:4000/delvetes/${id}`).then(() => {
+    axios.delete(`${import.meta.env.VITE_API_URL}/delvetes/${id}`).then(() => {
       toast.error("The Veterinarian  is deleted now ", { position: "top-right" });
     });
   }
     function veteStatus(id) {
-    axios.put(`http://localhost:4000/statusvetes/${id}`).then(() => {
+    axios.put(`${import.meta.env.VITE_API_URL}/statusvetes/${id}`).then(() => {
       toast.success("The Veterinarian status is upated now ", {
         position: "top-right",
       });

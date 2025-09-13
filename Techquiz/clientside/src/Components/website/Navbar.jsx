@@ -15,7 +15,7 @@ function Navbar() {
 
         try {
           const response = await axios.get(
-            `http://localhost:4000/profile/${id}`
+            `${import.meta.env.VITE_API_URL}/profile/${id}`
           );
           setUserData(response.data);
         } catch (error) {
@@ -31,7 +31,7 @@ function Navbar() {
 
   function logout() {
     sessionStorage.removeItem("userLogin");
-    axios.get("http://localhost:4000/logout");
+    axios.get(`${import.meta.env.VITE_API_URL}/logout`);
     nav("/");
   }
   return (

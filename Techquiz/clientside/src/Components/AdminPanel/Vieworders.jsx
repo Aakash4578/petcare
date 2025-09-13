@@ -6,7 +6,7 @@ const Vieworders = () => {
     var {id}=useParams()
 var[fetchData,SetData]=useState({})
   var fetchOrder=()=>{
-    axios.get(`http://localhost:4000/fetchOrderData/${id}`).then((res)=>{
+    axios.get(`${import.meta.env.VITE_API_URL}/fetchOrderData/${id}`).then((res)=>{
         SetData(res.data)
     })
   }

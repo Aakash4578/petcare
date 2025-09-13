@@ -37,7 +37,7 @@ const Add_Faq = () => {
     } else {
       try {
         const response = await axios
-          .post("http://localhost:4000/add_faq", {
+          .post(`${import.meta.env.VITE_API_URL}/add_faq`, {
             subject,
             faqQuestion,
             faqAnswer,

@@ -10,14 +10,14 @@ const EditProduct = () => {
   var { id } = useParams();
 
   var product_Data = () => {
-    axios.get(`http://localhost:4000/product_data/${id}`).then((resp) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/product_data/${id}`).then((resp) => {
       SetProduct(resp.data);
       console.log(resp.data);
     });
   };
   var [categories, SetCategory] = useState([]);
   var fetch_data = () => {
-    axios.get("http://localhost:4000/fetchCategory").then((resp) => {
+    axios.get(`${import.meta.env.VITE_API_URL}/fetchCategory`).then((resp) => {
       SetCategory(resp.data);
     });
   };
