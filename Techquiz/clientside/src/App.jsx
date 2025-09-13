@@ -60,7 +60,7 @@ import ShelterpetsEdit from "./Components/AnimalShelter/ShelterpetsEdit";
 import Animaldashboard from "./Components/AnimalShelter/Animaldashboard";
 import Vetesdashboard from "./Components/vetesPanels/Vetesdashboard";
 
-import Listpets from "./components/AnimalShelter/Listpets";
+import PetList from "./Components/AnimalShelter/PetList";
 
 
 const App = () => {
@@ -187,7 +187,7 @@ const App = () => {
           ></Route>
            <Route
             path="/shelter/pets"
-            element={<Listpets/>}
+            element={<PetList/>}
           ></Route>
            <Route
             path="/shelter/addpets"

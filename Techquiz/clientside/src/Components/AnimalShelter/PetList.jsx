@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import Shelterlayout from "./AnimalShelter/Shelterlayout";
-const Listpets = () => {
+const PetList = () => {
       const userToken = sessionStorage.getItem("animalsehlterLogined");
     const tokenParts = userToken.split(".");
     const payload = JSON.parse(atob(tokenParts[1]));
@@ -138,4 +138,4 @@ const Listpets = () => {
   )
 }
 
-export default Listpets
+export default PetList
