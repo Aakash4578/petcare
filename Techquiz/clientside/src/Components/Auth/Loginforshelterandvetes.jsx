@@ -63,7 +63,7 @@ const LoginShelter = () => {
     setShelterError({ email: "", hash_password: "" });
 
     try {
-      const response = await axios.post("http://localhost:4000/login_shelteranimal", shelterUser);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/login_shelteranimal`, shelterUser);
       if (response.data.success) {
         sessionStorage.setItem("animalsehlterLogined", JSON.stringify(response.data.messege));
         navigate("/shelter/index");
