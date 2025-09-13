@@ -53,7 +53,7 @@ const AnimalShelter = () => {
           <h2>Animals Shelter</h2>
        <div>
            <input
-            type="text"
+            type="text" 
             placeholder="Search ..."
             className="search-input"
             value={query}

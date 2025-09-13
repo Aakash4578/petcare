@@ -87,7 +87,7 @@ if (!form.pet_img) {
     formData.append("pet_img", form.pet_img);
 
     try {
-      await axios.put(`http://localhost:4000/UpdateShelterpet/${id}`, formData, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/UpdateShelterpet/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
