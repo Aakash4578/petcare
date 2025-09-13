@@ -39,11 +39,11 @@ import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
 import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes"
 import VetesprotectedRoutes from "./Components/vetesPanels/VetesprotectedRoutes"
-// import VetesProfile from "./Components/vetesPanels/VetesProfile";
-// import Veteindex from "./Components/vetesPanels/Veteindex";
-// import VetesProfile from "./Components/vetesPanels/VetesProfile"
-// import UpdatePet from "./Components/website/UpdatePet";
-// import Appointment from "./Components/website/Appointment";
+import VetesProfile from "./Components/vetesPanels/VetesProfile";
+import Veteindex from "./Components/vetesPanels/Veteindex";
+
+ import UpdatePet from "./Components/website/UpdatePet";
+import Appointment from "./Components/website/Appointment";
 import Vetesappointment from "./Components/vetesPanels/Vetesappointment";
 import Healthrecord from "./Components/vetesPanels/Healthrecord";
 import Addheathrecord from "./Components/vetesPanels/Addheathrecord";
