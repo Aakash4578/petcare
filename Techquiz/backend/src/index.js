@@ -1,3 +1,5 @@
+
+import SibApiV3Sdk from "sib-api-v3-sdk";
 require("./Models/connection");
 var express = require("express");
 var app = express();
@@ -44,18 +46,71 @@ var pet = require("./Models/pets");
 var appointment = require("./Models/Appointment");
 var HealthRecord = require("./Models/healthRecord");
 var shelterPets = require("./Models/shelterpets");
-const transporter = nodemailer.createTransport({
-  host: "smtp-relay.brevo.com",
-  port: 587,
-  secure: false, // 465 pe true hota hai
-  auth: {
-    user: "96f004001@smtp-brevo.com",
-    pass: "H9REOAv736afZSF1",
-  },
-  tls: {
-    rejectUnauthorized: false
+// const transporter = nodemailer.createTransport({
+//   host: "smtp-relay.brevo.com",
+//   port: 587,
+//   secure: false, // 465 pe true hota hai
+//   auth: {
+//     user: "96f004001@smtp-brevo.com",
+//     pass: "H9REOAv736afZSF1",
+//   },
+//   tls: {
+//     rejectUnauthorized: false
+//   }
+// });
+
+
+
+
+
+
+
+// Brevo client setup
+let defaultClient = SibApiV3Sdk.ApiClient.instance;
+let apiKey = defaultClient.authentications["api-key"];
+apiKey.apiKey = process.env.BREVO_API_KEY;
+
+let apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+
+app.post("/send-email", async (req, res) => {
+  try {
+    const { toEmail, subject, message } = req.body;
+
+    let sendSmtpEmail = {
+      sender: { email: "akashwaghella@gmail.com", name: "Your App" },
+      to: [{ email: toEmail }],
+      subject: subject,
+      textContent: message,
+    };
+
+    const response = await apiInstance.sendTransacEmail(sendSmtpEmail);
+    res.json({ success: true, data: response });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, error: err.message });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var websiteName="FurShield";
 var multer = require("multer");
