@@ -51,121 +51,15 @@ function Navbar() {
 								<nav id="mobile-menu">
 									<ul class="menu-list">
 										<Link to={"/appiontment"}>Appointment</Link>
+										<li><Link to={"/appiontment"}>Appointment</Link></li>
+										
+											
+												
+												
+												
+										
 										<li>
-											<a href="#">
-												Home
-											</a>
-											<ul class="sub-menu">
-												<li>
-													<a href="index.html">Home Style 1</a>
-												</li>
-												<li>
-													<a href="index-2.html">Home Style 2</a>
-												</li>
-												<li>
-													<a href="index-3.html">Home Style 3</a>
-												</li>
-												<li>
-													<a href="index-4.html">Home Style 4</a>
-												</li>
-
-												<li>
-													<a href="index-5.html">Home Style 5</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="#">
-												Pages
-											</a>
-											<ul class="sub-menu">
-												<li>
-													<a href="about.html">About Us</a>
-												</li>
-												<li>
-													<a href="#">Blog <span class="float-end"><i
-																class="bi bi-chevron-down"></i></span></a>
-													<ul class="sub-menu">
-														<li>
-															<a href="blog-grid.html">Blog Grid</a>
-														</li>
-														<li>
-															<a href="blog-list.html">Blog List</a>
-														</li>
-														<li>
-															<a href="blog-classic.html">Blog Classic</a>
-														</li>
-														<li>
-															<a href="blog-details.html">Blog Details</a>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Shop <span class="float-end"><i
-																class="bi bi-chevron-down"></i></span></a>
-													<ul class="sub-menu">
-														<li>
-															<a href="shop.html">Shop</a>
-														</li>
-														<li>
-															<a href="shop-details.html">Shop Details</a>
-														</li>
-														<li>
-															<a href="cart.html">Cart</a>
-														</li>
-														<li>
-															<a href="checkout.html">Checkout</a>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Project <span class="float-end"><i
-																class="bi bi-chevron-down"></i></span></a>
-													<ul class="sub-menu">
-														<li>
-															<a href="project-grid.html">Project Grid</a>
-														</li>
-														<li>
-															<a href="project-details.html">Project Details</a>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="#">Team <span class="float-end"><i
-																class="bi bi-chevron-down"></i></span></a>
-													<ul class="sub-menu">
-														<li>
-															<a href="team.html">Team</a>
-														</li>
-														<li>
-															<a href="team-details.html">Team Details</a>
-														</li>
-													</ul>
-												</li>
-												<li>
-													<a href="error.html">Error - 404</a>
-												</li>
-												<li>
-													<a href="faq.html">Faq</a>
-												</li>
-												<li>
-													<a href="price.html">Price</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="#">Service</a>
-											<ul class="sub-menu">
-												<li>
-													<a href="services.html">Services</a>
-												</li>
-												<li>
-													<a href="services-details.html">Services Details</a>
-												</li>
-											</ul>
-										</li>
-										<li>
-											<a href="contact.html">Contact</a>
+											<a href="#l">Contact</a>
 										</li>
 
 									</ul>
