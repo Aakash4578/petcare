@@ -46,12 +46,16 @@ var HealthRecord = require("./Models/healthRecord");
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
   port: 587,
-  secure: false, // or 'STARTTLS'
+  secure: false, // 465 pe true hota hai
   auth: {
     user: "966313001@smtp-brevo.com",
     pass: "pM3zJ4CfYkmWxUT8",
   },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
+
 var websiteName="FurShield";
 var multer = require("multer");
 const storage = multer.diskStorage({
@@ -1170,22 +1174,37 @@ app.post("/register_shelter", async (req, res) => {
 
 
     // for sending the Email
-    var mailOptions = {
-      from: "mahnnooranwar191@gmail.com",
-      to: email,
-      subject: `welcome to ${websiteName}`,
-      text: `weclome to ${websiteName}.your account is register With email id :${email} and please verify the account with this  OPT  ${Otp} `,
-    };
-    await transporter.sendMail(mailOptions);
+//       var mailOptions = {
+//       from: "mahnnooranwar191@gmail.com",
+//       to: email,
+//       subject: `welcome to ${websiteName}`,
+//       text: `weclome to ${websiteName}.your account is register With email id :${email} and please verify the account with this  OPT  ${Otp} `,
+//     };
+//     await transporter.sendMail(mailOptions);
 
-    return res.json({
-      success: true,
-      massege: "Vaterinarian is registered succesfully !",
+//     return res.json({
+//       success: true,
+//       massege: "Vaterinarian is registered succesfully !",
+//     });
+//   } catch (error) {
+//     return res.json({ success: false, massege: error.message });
+//   }
+// });
+app.get("/test-email", async (req, res) => {
+  try {
+    await transporter.sendMail({
+      from: "966313001@smtp-brevo.com",   // yahi verified hona chahiye
+      to: "mahnnooranwar191@gmail.com", // apna email
+      subject: "SMTP Test",
+      text: "Hello! This is a test email from Brevo SMTP.",
     });
-  } catch (error) {
-    return res.json({ success: false, massege: error.message });
+    res.send("✅ Email sent!");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("❌ Email failed: " + err.message);
   }
 });
+
 app.get("/search_shelter/search", async (req, res) => {
   var query = req.query.q || "";
   var items = await animalShelters.find({
