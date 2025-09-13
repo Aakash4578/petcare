@@ -1,0 +1,600 @@
+.contact-form-wrapper {
+    padding: 90px 94px 75px 20px;
+
+    @media #{$max-lg} {
+        padding: 15px 15px 12px 15px;
+    }
+
+    @media #{$max-md} {
+        padding: 30px 15px;
+    }
+}
+
+.contact-form-wrapper-2 {
+    padding: 90px 94px 75px 20px;
+
+    @media #{$max-lg} {
+        padding: 15px 15px 12px 15px;
+    }
+
+    @media #{$max-md} {
+        padding: 30px 15px;
+    }
+
+    @media #{$max-md} {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+.contact-border-wrapper {
+    border: 10px solid $white;
+    border-radius: 30px;
+}
+
+.contact-border-wrapper-2 {
+    border: 15px solid $black;
+    border-radius: 30px;
+
+    @media #{$max-xs} {
+        border: 0;
+    }
+}
+
+
+.contact-form {
+    .input-wrapper {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 30px;
+
+        input {
+            width: 100%;
+            height: 70px;
+            border: 0;
+            background: $white;
+            color: $black;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: $satoshiMedium;
+            border-radius: 10px;
+            border: 1px solid $white;
+            padding-left: 25px;
+
+            &::placeholder {
+                color: $black;
+                font-size: 18px;
+            }
+
+            &::-moz-placeholder {
+                color: $black;
+                font-size: 18px;
+            }
+
+            &::-webkit-placeholder {
+                color: $black;
+                font-size: 18px;
+            }
+
+            &::-o-placeholder {
+                color: $black;
+                font-size: 18px;
+            }
+
+            &::-ms-placeholder {
+                color: $black;
+                font-size: 18px;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            height: 140px;
+            border: 0;
+            background: rgba(255, 255, 255, 1);
+            color: $black;
+            font-size: 14px;
+            font-family: $satoshiRegular;
+            padding-top: 10px;
+            padding-left: 25px;
+            border-radius: 10px;
+            border: 1px solid $white;
+
+            &::placeholder {
+                color: $black;
+                font-size: 16px;
+            }
+
+            &::-moz-placeholder {
+                color: $black;
+                font-size: 16px;
+            }
+
+            &::-webkit-placeholder {
+                color: $black;
+                font-size: 16px;
+            }
+
+            &::-o-placeholder {
+                color: $black;
+                font-size: 16px;
+            }
+
+            &::-ms-placeholder {
+                color: $black;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    .submit-btn {
+        color: $white;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        height: 65px;
+        line-height: 60px;
+        padding-left: 55px;
+        padding-right: 55px;
+        text-transform: uppercase;
+        letter-spacing: 0.05px;
+        border-radius: 50px;
+        border: 0;
+        background: $theme-color2;
+        border: 2px solid $theme-color2;
+        width: 100%;
+        @include transition(.4s);
+
+        &:hover {
+            color: $white;
+            background: $theme-color;
+            border-color: $theme-color;
+        }
+    }
+
+    @media #{$max-lg} {
+        .input-wrapper {
+            margin-bottom: 25px;
+        }
+    }
+
+    &.form-2 {
+        .input-wrapper {
+
+            input,
+            textarea {
+                color: $black;
+                padding-left: 25px;
+                background: #f4f4f4;
+                border-radius: 8px;
+
+                &::placeholder {
+                    color: $black;
+                    font-size: 18px;
+                }
+
+                &::-moz-placeholder {
+                    color: $black;
+                    font-size: 18px;
+                }
+
+                &::-webkit-placeholder {
+                    color: $black;
+                    font-size: 18px;
+                }
+
+                &::-o-placeholder {
+                    color: $black;
+                    font-size: 18px;
+                }
+
+                &::-ms-placeholder {
+                    color: $black;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .submit-btn {
+            color: $white;
+            width: auto;
+            background: $theme-color2;
+            border-radius: 8px;
+
+            &:hover {
+                background: $black;
+                border-color: $black;
+            }
+        }
+    }
+
+}
+
+.subscribe-form {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    input {
+        width: 100%;
+        height: 70px;
+        border: 0;
+        color: $body-text-color;
+        font-size: 18px;
+        font-family: $satoshiRegular;
+        border: 0;
+        padding-left: 30px;
+        border-radius: 10px;
+
+        &::placeholder {
+            color: $body-text-color;
+            font-size: 16px;
+        }
+
+        &::-moz-placeholder {
+            color: $body-text-color;
+            font-size: 16px;
+        }
+
+        &::-webkit-placeholder {
+            color: $body-text-color;
+            font-size: 16px;
+        }
+
+        &::-o-placeholder {
+            color: $body-text-color;
+            font-size: 16px;
+        }
+
+        &::-ms-placeholder {
+            color: $body-text-color;
+            font-size: 16px;
+        }
+    }
+
+    button {
+        color: $white;
+        font-size: 18px;
+        font-family: $fredoka;
+        border: 0;
+        font-weight: 600;
+        line-height: 1;
+        text-transform: capitalize;
+        display: inline-block;
+        background: $theme-color2;
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        border-radius: 6px;
+        height: 50px;
+        width: max-content;
+        padding: 0px 15px;
+        @include transition(.4s);
+
+        &:hover {
+            color: $body-text-color;
+            background: $theme-color;
+        }
+    }
+
+    &.sub-form-2 {
+        display: inline-block;
+
+        input {
+            height: 70px;
+            line-height: 70px;
+            display: block;
+            border-radius: 10px;
+
+            &::placeholder {
+                color: $body-text-color;
+            }
+        }
+
+        button {
+            color: $heding;
+            font-size: 18px;
+            background: $theme-color;
+            min-height: 55px;
+            line-height: 55px;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: auto;
+            border-radius: 8px;
+            @include transition(.4s);
+
+            &:hover {
+                color: $white;
+                background: $theme-color2;
+            }
+        }
+
+        @media #{$max-md} {
+            input {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            button {
+                right: 0;
+            }
+        }
+    }
+
+    &.sub-form-3 {
+        border-bottom: 1px solid $black;
+
+        input {
+            border: 0;
+            border-radius: 0;
+            height: 65px;
+            line-height: 65px;
+            font-size: 16px;
+            font-weight: 500;
+            font-family: $satoshiMedium;
+            padding-left: 0;
+
+            &::placeholder {
+                color: $body-text-color;
+                font-size: 16px;
+            }
+
+            &::-moz-placeholder {
+                color: $body-text-color;
+                font-size: 16px;
+            }
+
+            &::-webkit-placeholder {
+                color: $body-text-color;
+                font-size: 16px;
+            }
+
+            &::-o-placeholder {
+                color: $body-text-color;
+                font-size: 16px;
+            }
+
+            &::-ms-placeholder {
+                color: $body-text-color;
+                font-size: 16px;
+            }
+        }
+
+        button {
+            color: $body-text-color;
+            font-size: 20px;
+            font-weight: 600;
+            font-family: $fredoka;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+            min-width: max-content;
+            min-height: 65px;
+            padding: 0;
+            text-transform: capitalize;
+            right: unset;
+            top: unset;
+            margin-left: 0;
+            @include transition(.4s);
+
+            &:hover {
+                color: $black;
+                background: transparent;
+            }
+
+        }
+
+        @media #{$max-xs} {
+            input {
+                border-bottom: 1px solid $black;
+            }
+
+            button {
+                margin-left: 0;
+            }
+        }
+
+    }
+
+    &.sub-form-4 {
+        display: inline-block;
+        max-width: 525px;
+
+        input {
+            width: 100%;
+            height: 80px;
+            line-height: 65px;
+            border-radius: 10px;
+            border: 0;
+            background: $white;
+            display: block;
+        }
+
+        button {
+            color: $body-text-color;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: $fredoka;
+            text-transform: uppercase;
+            background: $theme-color3;
+            border-radius: 8px;
+            min-height: 55px;
+            line-height: 55px;
+            padding-left: 30px;
+            padding-right: 30px;
+            width: auto;
+            transform: translateY(1px);
+            @include transition(.4s);
+
+            &:hover {
+                color: $white;
+                background: $black;
+            }
+        }
+
+        @media #{$max-md} {
+            input {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            button {
+                right: 0;
+            }
+        }
+
+        @media #{$max-xs} {
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    @media #{$max-xs} {
+        text-align: center;
+        width: 100%;
+
+        button {
+            width: 100%;
+            position: relative;
+            top: unset;
+            right: unset;
+            margin-top: 10px;
+
+            &.black-btn {
+                background: $heding;
+            }
+        }
+    }
+
+}
+
+.subscribe-agreement-checkbox {
+    label {
+        color: $heding;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+    }
+}
+
+//cta-section
+.cta-shape {
+    top: 73%;
+    left: -77px;
+}
+
+.contact-map {
+
+    iframe {
+        height: 750px;
+        width: 100%;
+        display: block;
+    }
+
+    @media #{$max-laptop} {
+
+        iframe {
+            height: 600px;
+        }
+    }
+
+    @media #{$max-laptop} {
+
+        iframe {
+            height: 400px;
+        }
+    }
+}
+
+
+//signup-form-section
+.signup-form-section {
+    .contact-wrapper {
+        background: rgba(244, 244, 244, 0.5);
+        padding: 50px;
+        border-radius: 30px;
+
+        @media #{$max-xs} {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    .contact-form {
+        .input-wrapper span {
+            left: 21px;
+        }
+    }
+
+    button.signup-btn {
+        border: 0;
+        width: 100%;
+        height: 45px;
+        background: transparent;
+        color: $heding;
+        font-weight: 600;
+    }
+}
+
+.info-box2 {
+    background: #F3F3F3;
+    border-radius: 20px;
+    padding: 40px 40px 30px 40px;
+    margin-bottom: 45px;
+    display: flex;
+
+    .icon {
+        color: $white;
+        width: 70px;
+        height: 70px;
+        background: $theme-color2;
+        border-radius: 50%;
+        font-size: 40px;
+        text-align: center;
+        line-height: 70px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-content {
+        flex: 1;
+    }
+
+    .info-title {
+        font-size: 30px;
+        font-weight: 500;
+        font-family: $fredoka;
+        margin-bottom: 11px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    @media #{$max-lg} {
+        padding-right: 0;
+
+        .icon {
+            margin-bottom: 30px;
+        }
+
+        .info-title {
+            font-size: 22px;
+        }
+    }
+
+    @media #{$max-xs} {
+        padding-left: 10px;
+        padding-right: 10px;
+        display: block;
+        text-align: center;
+
+        .icon {
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    }
+}

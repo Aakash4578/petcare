@@ -1,0 +1,465 @@
+//team
+
+.team-wrap-1 {
+    border-radius: 30px;
+    background: $white;
+    padding: 25px;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    @include transition(.4s);
+
+    .team-thumb {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        img {
+            border-radius: 10px;
+            @include transition(.4s);
+        }
+    }
+
+    .team-social {
+        a:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    .content {
+        padding-left: 30px;
+        @include transition(.4s);
+    }
+
+    .name {
+
+        font-size: 20px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        margin-bottom: 35px;
+
+        a {
+            color: rgba(0, 0, 0, 0.5);
+
+            &:hover {
+                color: $theme-color2;
+            }
+        }
+    }
+
+    .designation {
+        color: $heding;
+        font-size: 28px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 20px;
+        @include transition(.4s);
+    }
+
+    @media #{$max-lg} {
+        padding: 15px;
+
+        .content {
+            padding-left: 10px;
+        }
+
+        .designation {
+            font-size: 20px;
+        }
+
+        .team-social {
+            a:not(:last-child) {
+                margin-right: 3px;
+            }
+        }
+    }
+
+    @media #{$max-md} {
+        text-align: center;
+        padding-bottom: 35px;
+
+        .content {
+            padding-left: 0;
+            margin-top: 25px;
+        }
+
+        .name {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.team-wrap-2 {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid transparent;
+    border-radius: 185px;
+    text-align: center;
+    margin-bottom: 45px;
+    position: relative;
+    z-index: 1;
+    @include transition(.4s);
+
+    .team-thumb {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            border-radius: 30px;
+            @include transition(.4s);
+        }
+    }
+
+    .team-social {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        position: absolute;
+        top: 130px;
+        right: -100px;
+        z-index: 2;
+        @include transition(.4s);
+
+        a {
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+
+            &:hover {
+                color: $white;
+                border-color: $theme-color3;
+                background: $theme-color3;
+            }
+        }
+    }
+
+    .content {
+        position: absolute;
+        bottom: 75px;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        @include transition(.4s);
+    }
+
+    .designation {
+        color: $white;
+        font-size: 20px;
+        font-weight: 400;
+        font-family: $satoshiRegular;
+        margin-bottom: 0;
+        @include transition(.4s);
+    }
+
+
+    .name {
+        color: $white;
+        font-size: 32px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 4px;
+    }
+
+    .bg-shape {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -180px;
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        @include transition(.4s);
+    }
+
+    &:hover {
+        background: $white;
+        border-color: $black;
+
+        .team-social {
+            right: 10px;
+        }
+
+        .name {
+            a {
+                color: $body-text-color;
+            }
+        }
+
+        .designation {
+            color: $body-text-color;
+        }
+
+        .bg-shape {
+            bottom: 0px;
+            visibility: visible;
+            opacity: 1;
+        }
+
+    }
+
+    @media #{$max-lg} {
+
+
+
+        .name {
+            a {
+                font-size: 20px;
+            }
+        }
+
+        .designation {
+            font-size: 18px;
+        }
+    }
+}
+
+.team-wrap-3 {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 40px;
+    @include transition(.4s);
+
+
+    .team-thumb {
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        img {
+            border-radius: 10px;
+            @include transition(.4s);
+        }
+    }
+
+    .team-social {
+        a:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+
+    .content {
+        padding-left: 30px;
+        @include transition(.4s);
+    }
+
+    .name {
+
+        font-size: 20px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        margin-bottom: 35px;
+
+        a {
+            color: rgba(0, 0, 0, 0.5);
+
+            &:hover {
+                color: $theme-color2;
+            }
+        }
+    }
+
+    .designation {
+        color: $heding;
+        font-size: 28px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 20px;
+        @include transition(.4s);
+    }
+
+    @media #{$max-lg} {
+        text-align: center;
+
+        .team-thumb {
+            margin-bottom: 20px;
+        }
+
+        .content {
+            padding-left: 0;
+        }
+
+        .name {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    @media #{$max-md} {
+        padding: 15px 15px 25px 15px;
+
+        .designation {
+            font-size: 20px;
+        }
+    }
+}
+
+.team-social {
+
+    a {
+        color: $heding;
+        font-size: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1.5px solid $black;
+        text-align: center;
+        line-height: 50px;
+        display: inline-block;
+
+        @include transition(0.4s);
+
+        i {
+            @include transition(0.4s);
+        }
+
+        &:hover {
+            color: $white;
+            background: $theme-color2;
+            border-color: $theme-color2;
+
+            i {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.biography-content-wrap {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+
+    .team-biography {
+        img {
+            border-radius: 15px
+        }
+
+        @media #{$max-md} {
+            padding: 15px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .name {
+        font-size: 60px;
+        font-weight: 600;
+        font-family: $fredoka;
+
+        a {
+            color: $heding;
+        }
+    }
+
+    .designation {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+
+    .description {
+        font-size: 22px;
+        line-height: 38px;
+        max-width: 100%;
+    }
+
+    .text-desc-divider {
+        height: 1px;
+        display: inline-block;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.2);
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+
+    .addres-line {
+        color: $body-text-color;
+        font-size: 20px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        padding-bottom: 15px;
+
+        span {
+            font-weight: 400;
+            font-family: $satoshiRegular;
+        }
+    }
+
+
+    .contact-btn {
+        border: 1px solid #000;
+        border-radius: 30px;
+        padding: 14px 40px;
+        font-weight: 600;
+        @include transition(.4s);
+
+        &:hover {
+            color: $white;
+            background: $theme-color;
+            border-color: $theme-color;
+        }
+    }
+
+
+    @media #{$max-lg} {
+
+        .name {
+            font-size: 32px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        .description {
+            max-width: 100%;
+        }
+
+        .addres-line {
+            font-size: 18px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.biography-content {
+    padding: 67px 95px 67px 0;
+    border-radius: 30px;
+    position: relative;
+    z-index: 1;
+
+    .team-social {
+        position: absolute;
+        right: 90px;
+        bottom: 65px;
+        display: flex;
+        gap: 15px;
+    }
+
+    @media #{$max-lg} {
+        padding: 25px 15px;
+
+        .team-social {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            gap: 10px;
+        }
+    }
+}
+
+.education-skill,
+.education-history {
+    background: $light;
+    border-radius: 25px;
+    padding: 50px;
+
+    @media #{$max-lg} {
+        padding: 25px 15px;
+    }
+}

@@ -1,0 +1,1232 @@
+.blog-one,
+.blog-six {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+
+    .blog-content {
+        flex: 1;
+        margin-left: 90px;
+    }
+
+    .blog-thumb {
+        position: relative;
+        z-index: 3;
+
+        img {
+            width: 100%;
+            border-radius: 192px 40px 40px 192px;
+            border: 10px solid $theme-color;
+        }
+    }
+
+    .blog-date {
+        color: $body-text-color;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        line-height: 20px;
+        padding: 14px 22px 12px 22px;
+        background: $theme-color;
+        border-radius: 8px 0 40px 40px;
+        position: absolute;
+        z-index: 1;
+        left: 26%;
+        top: 0;
+
+        b {
+            font-size: 24px;
+            font-family: $satoshiBold;
+            line-height: 1;
+        }
+    }
+
+
+    .blog-meta {
+        margin-bottom: 12px;
+
+        a {
+            color: $body-text-color;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: $satoshiBold;
+            display: inline-block;
+            padding: 0px 16px;
+            border-radius: 40px;
+            line-height: 35px;
+            background: $theme-color;
+            margin-right: 6px;
+
+            @include transition(.4s);
+
+
+            // &:hover {
+            //     color: $theme-color;
+            // }
+
+            &:last-child {
+                margin-right: 0;
+                margin-left: 4px;
+            }
+        }
+
+        .divider {
+            display: inline-block;
+            width: 1.4px;
+            height: 14px;
+            background: rgba(0, 0, 0, 0.6);
+            transform: rotate(32deg) translateY(2px);
+        }
+    }
+
+    .blog-title {
+        font-size: 60px;
+        line-height: 1.1;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 20px;
+
+        a {
+            color: $heding;
+            @include transition(.4s);
+        }
+    }
+
+    .blog-text {
+        margin-bottom: 48px;
+    }
+
+
+    .blog-btn {
+        color: $body-text-color;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        text-transform: uppercase;
+        letter-spacing: 0.05px;
+        border-bottom: 1.5px solid $black;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+
+        i {
+            margin-left: 19px;
+        }
+
+        &:hover {}
+    }
+
+    &:hover {}
+
+
+
+    @media #{$max-laptop} {
+        .blog-content {
+            margin-left: 30px;
+        }
+
+        .blog-title {
+            font-size: 38px;
+        }
+
+        .blog-text {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    @media #{$max-lg} {
+
+        .blog-content {
+            margin-left: 0;
+            margin-top: 30px;
+        }
+    }
+
+    @media #{$max-xs} {
+
+        .blog-title {
+            font-size: 28px;
+        }
+
+        .blog-tag {
+            left: 15px;
+            top: 15px;
+        }
+    }
+}
+
+.blog-two {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 45px;
+
+    .blog-thumb {
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+
+        img {
+            max-width: 100%;
+            border-radius: 40px 0 40px 40px;
+        }
+    }
+
+    .blog-tag {
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        line-height: 35px;
+        display: inline-block;
+        padding: 0 15px;
+        background: $white;
+        border-radius: 0 17px 17px 0px;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 45px;
+    }
+
+    .blog-meta {
+        margin-bottom: 5px;
+
+        a {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 18px;
+            font-weight: 400;
+            font-family: $satoshiRegular;
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+
+    .divider {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.6);
+        width: 1.5px;
+        height: 13px;
+        transform: rotate(15deg);
+        margin-right: 4px;
+    }
+
+    .blog-title {
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 30px;
+
+        a {
+            color: $heding;
+            @include transition(.4s);
+        }
+    }
+
+
+    p {
+        margin-bottom: 60px;
+    }
+
+    .more-btn {
+        color: $heding;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.4s ease 0s;
+
+        .btn-icon {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1.5px solid $black;
+                z-index: -1;
+                top: -1px;
+                right: -15px;
+                transition: all 0.4s ease 0s;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background: $black;
+                width: 21px;
+                height: 1.5px;
+                z-index: 1;
+                left: 20px;
+                top: 18px;
+                transition: all 0.4s ease 0s;
+            }
+        }
+
+        img {
+            display: inline-block;
+            transition: all 0.4s ease 0s;
+            margin-left: 20px;
+        }
+
+        &:hover {
+            .btn-icon {
+                &::before {
+                    background: $theme-color2;
+                    border-color: $theme-color2;
+                }
+            }
+
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+
+
+    @media #{$max-laptop} {
+        .blog-title {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+    }
+
+    @media #{$max-md} {}
+
+
+    @media #{$max-xs} {
+
+        .blog-title {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
+
+.blog-three {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 45px;
+
+    .blog-thumb {
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+
+        img {
+            max-width: 100%;
+            border-radius: 30px;
+            border: 15px solid $white;
+        }
+    }
+
+    .blog-tag {
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        line-height: 35px;
+        display: inline-block;
+        padding: 0 15px;
+        background: $theme-color;
+        border-radius: 20px;
+        position: absolute;
+        z-index: 1;
+        right: 25px;
+        top: 25px;
+    }
+
+    .blog-meta {
+        margin-bottom: 5px;
+
+        a {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 18px;
+            font-weight: 400;
+            font-family: $satoshiRegular;
+            display: inline-block;
+            margin-right: 4px;
+            @include transition(.4s);
+
+            &:hover {
+                color: $theme-color2;
+            }
+        }
+    }
+
+    .divider {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.6);
+        width: 1.5px;
+        height: 13px;
+        transform: rotate(15deg);
+        margin-right: 4px;
+    }
+
+    .blog-title {
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 30px;
+
+        a {
+            color: $heding;
+            @include transition(.4s);
+
+            &:hover {
+                color: $theme-color2;
+            }
+        }
+    }
+
+
+    p {
+        margin-bottom: 60px;
+    }
+
+    .more-btn {
+        color: $heding;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        border-bottom: 1.5px solid $black;
+        transition: all 0.4s ease 0s;
+
+        .btn-icon {
+            margin-left: 40px;
+        }
+
+        &:hover {
+            color: $theme-color2;
+            border-color: $theme-color2;
+        }
+    }
+
+    .blog-content {
+        padding-right: 10px;
+    }
+
+
+    @media #{$max-laptop} {
+        .blog-title {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        .blog-content {
+            padding-right: 0;
+        }
+
+    }
+
+    @media #{$max-md} {}
+
+
+    @media #{$max-xs} {
+
+        .blog-title {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
+
+.blog-four {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+
+    &.space-right {
+        .blog-content {
+            margin-left: 0;
+            margin-right: 90px;
+        }
+
+        @media #{$max-laptop} {
+            .blog-content {
+                margin-right: 30px;
+            }
+        }
+
+        @media #{$max-lg} {
+            .blog-content {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .blog-content {
+        flex: 1;
+        margin-left: 90px;
+    }
+
+    .blog-thumb {
+        position: relative;
+        z-index: 3;
+
+        img {
+            width: 100%;
+            border-radius: 192.5px;
+        }
+    }
+
+    .blog-date {
+        color: $body-text-color;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        line-height: 20px;
+        padding: 14px 22px 12px 22px;
+        background: $theme-color;
+        border-radius: 8px 0 40px 40px;
+        position: absolute;
+        z-index: 1;
+        left: 26%;
+        top: 0;
+
+        b {
+            font-size: 24px;
+            font-family: $satoshiBold;
+            line-height: 1;
+        }
+    }
+
+
+    .blog-meta {
+        margin-bottom: 12px;
+
+        a {
+            color: $body-text-color;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: $satoshiBold;
+            display: inline-block;
+            padding: 0px 16px;
+            border-radius: 40px;
+            line-height: 35px;
+            background: $theme-color;
+            margin-right: 6px;
+
+            @include transition(.4s);
+
+
+            // &:hover {
+            //     color: $theme-color;
+            // }
+
+            &:last-child {
+                margin-right: 0;
+                margin-left: 4px;
+            }
+        }
+
+        .divider {
+            display: inline-block;
+            width: 1.4px;
+            height: 14px;
+            background: rgba(0, 0, 0, 0.6);
+            transform: rotate(32deg) translateY(2px);
+        }
+    }
+
+    .blog-title {
+        font-size: 60px;
+        line-height: 1.1;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 20px;
+
+        a {
+            color: $heding;
+            @include transition(.4s);
+        }
+    }
+
+    .blog-text {
+        margin-bottom: 48px;
+    }
+
+
+    .blog-btn {
+        color: $body-text-color;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        text-transform: uppercase;
+        letter-spacing: 0.05px;
+        border-bottom: 1.5px solid $black;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+
+        i {
+            margin-left: 19px;
+        }
+
+        &:hover {}
+    }
+
+    &:hover {}
+
+
+
+    @media #{$max-laptop} {
+        .blog-content {
+            margin-left: 30px;
+        }
+
+        .blog-title {
+            font-size: 38px;
+        }
+
+        .blog-text {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    @media #{$max-lg} {
+
+        .blog-content {
+            margin-left: 0;
+            margin-top: 30px;
+        }
+    }
+
+    @media #{$max-xs} {
+
+        .blog-title {
+            font-size: 28px;
+        }
+
+        .blog-tag {
+            left: 15px;
+            top: 15px;
+        }
+
+        .blog-date {
+            font-size: 12px;
+            line-height: 16px;
+            padding: 6px 15px 6px 15px;
+
+            b {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.blog-five {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 45px;
+
+    .blog-thumb {
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+
+        img {
+            max-width: 100%;
+            border-radius: 30px;
+        }
+    }
+
+    .blog-tag {
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        line-height: 35px;
+        display: inline-block;
+        padding: 0 15px;
+        background: $white;
+        border-radius: 30px;
+        position: absolute;
+        z-index: 1;
+        left: 25px;
+        top: 25px;
+    }
+
+    .blog-meta {
+        margin-bottom: 5px;
+
+        a {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 18px;
+            font-weight: 400;
+            font-family: $satoshiRegular;
+            display: inline-block;
+            margin-right: 4px;
+        }
+    }
+
+    .divider {
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.6);
+        width: 1.5px;
+        height: 13px;
+        transform: rotate(15deg);
+        margin-right: 4px;
+    }
+
+    .blog-title {
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 30px;
+
+        a {
+            color: $heding;
+            @include transition(.4s);
+        }
+    }
+
+
+    p {
+        margin-bottom: 60px;
+    }
+
+    .more-btn {
+        color: $heding;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.4s ease 0s;
+
+        .btn-icon {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1.5px solid $black;
+                background: $white;
+                z-index: -1;
+                top: -1px;
+                right: -15px;
+                transition: all 0.4s ease 0s;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background: $black;
+                width: 21px;
+                height: 2px;
+                z-index: 1;
+                left: 20px;
+                top: 19px;
+                transition: all 0.4s ease 0s;
+            }
+        }
+
+        img {
+            display: inline-block;
+            transition: all 0.4s ease 0s;
+            margin-left: 20px;
+        }
+
+        &:hover {
+            .btn-icon {
+                &::before {
+                    background: $theme-color3;
+                    border-color: $theme-color3;
+                }
+            }
+
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+
+
+    @media #{$max-laptop} {
+        .blog-title {
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+    }
+
+    @media #{$max-md} {}
+
+
+    @media #{$max-xs} {
+
+        .blog-title {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+}
+
+.blog-six {
+    .blog-thumb {
+        img {
+            border-radius: 192.5px;
+        }
+    }
+}
+
+
+
+.classic-style {
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
+
+    .blog-thumb {
+        position: relative;
+        z-index: 1;
+
+        img {
+            max-width: 100%;
+            border-radius: 40px 0 40px 40px;
+        }
+    }
+
+    .popup-video {
+        color: $body-text-color;
+        font-size: 50px;
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: $theme-color;
+        position: absolute;
+
+        img {
+            width: 20px;
+        }
+    }
+
+    button.slick-arrow {
+        font-size: 24px;
+        border: 0;
+        background: rgba(7, 17, 6, 0.3);
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    button.slick-next {
+        left: auto;
+        right: 30px;
+    }
+
+    button.slick-prev {
+        left: 30px;
+    }
+
+    .blog-tag {
+        color: $black;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        line-height: 35px;
+        display: inline-block;
+        padding: 0 15px;
+        background: $white;
+        border-radius: 0 17px 17px 0px;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        bottom: 45px;
+    }
+
+
+    .blog-meta {
+        margin-bottom: 5px;
+
+        a {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 18px;
+            font-weight: 400;
+            font-family: $satoshiRegular;
+            display: inline-block;
+            margin-right: 4px;
+            margin-bottom: 6px;
+
+            &:hover {
+                color: $theme-color2;
+            }
+
+            &:last-child {
+                margin-right: 0;
+                margin-left: 4px;
+            }
+        }
+
+        .divider {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            width: 1.5px;
+            height: 13px;
+            transform: rotate(15deg);
+            margin-right: 4px;
+        }
+    }
+
+    .blog-title {
+        font-size: 36px;
+        line-height: 46px;
+        font-weight: 600;
+        font-family: $fredoka;
+        margin-bottom: 30px;
+        margin-top: 5px;
+
+        a {
+            color: $heding;
+            @include transition(.4s);
+
+            &:hover {
+                color: $theme-color2;
+            }
+        }
+    }
+
+    .blog-content {
+        padding-top: 30px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    .blog-btn {
+        color: $heding;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: $fredoka;
+        text-transform: uppercase;
+        display: inline-flex;
+        align-items: center;
+        transition: all 0.4s ease 0s;
+
+        .btn-icon {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1.5px solid $black;
+                z-index: -1;
+                top: -1px;
+                right: -15px;
+                transition: all 0.4s ease 0s;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                background: $black;
+                width: 21px;
+                height: 1.5px;
+                z-index: 1;
+                left: 20px;
+                top: 18px;
+                transition: all 0.4s ease 0s;
+            }
+        }
+
+        img {
+            display: inline-block;
+            transition: all 0.4s ease 0s;
+            margin-left: 20px;
+        }
+
+        &:hover {
+            .btn-icon {
+                &::before {
+                    background: $theme-color2;
+                    border-color: $theme-color2;
+                }
+            }
+
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+
+    @media #{$max-lg} {
+
+        .blog-meta a {
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .blog-meta a:first-child {
+            margin-right: 3px;
+        }
+
+        .blog-title {
+            font-size: 28px;
+            line-height: 1.4;
+        }
+
+    }
+
+    @media #{$max-laptop} {
+        font-size: 36px;
+    }
+
+    @media #{$max-lg} {
+        font-size: 28px;
+    }
+
+    @media #{$max-xs} {
+        margin-left: 0;
+    }
+}
+
+.blockquote {
+    background: #EAEAFF;
+    padding: 40px 70px 44px 60px;
+    border-left: 6px solid $theme-color2;
+    border-radius: 25px;
+    position: relative;
+    z-index: 1;
+
+    img {
+        display: inline-block;
+    }
+
+    .quote-icon {
+        display: inline-block;
+    }
+
+    p {
+        color: $heding;
+        font-family: $fredoka;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 1.32;
+        margin-bottom: 22px;
+        margin-top: 15px;
+
+        @media #{$max-lg} {
+            font-size: 20px;
+        }
+    }
+
+    .blockquote-footer {
+        color: $body-text-color;
+        display: inline-block;
+        font-size: 22px;
+        font-weight: 500;
+        font-family: $satoshiMedium;
+        position: relative;
+
+        &::before {
+            color: $black;
+            width: 30px;
+            height: 2px;
+            border-radius: 6px;
+            left: 10px;
+        }
+
+        @media #{$max-lg} {
+            font-size: 20px;
+        }
+    }
+
+    @media #{$max-lg} {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.blog-details-wrapper {
+    .classic-style {
+        border: 0;
+
+        .blog-title {
+            font-size: 60px;
+            font-weight: 600;
+            font-family: $fredoka;
+            line-height: 1.1;
+
+            @media #{$max-laptop} {
+                font-size: 45px;
+            }
+
+            @media #{$max-lg} {
+                font-size: 36px;
+            }
+
+            @media #{$max-xs} {
+                font-size: 28px;
+            }
+        }
+
+        .blog-content {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .img-box {
+        img {
+            border-radius: 30px 0 30px 30px;
+        }
+    }
+}
+
+
+//comment-box
+.comment-reply-title,
+.comment-title,
+.blog-details-title {
+    font-size: 42px;
+    font-weight: 600;
+    font-family: $fredoka;
+
+    @media #{$max-lg} {
+        font-size: 24px;
+    }
+}
+
+.comment-box {
+    position: relative;
+    z-index: 1;
+    border-bottom: 2px solid rgba(7, 17, 6, 0.05);
+
+    .date {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 16px;
+        font-family: $satoshiRegular;
+        margin-bottom: 0;
+    }
+
+    .name {
+        font-size: 20px;
+        font-weight: 600;
+        color: $heding;
+    }
+
+    .comment-avatar {
+        float: left;
+        margin-right: 30px;
+        margin-top: 8px;
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        @media #{$xs} {
+            float: none;
+            margin-right: 0;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+    }
+
+    .comment-content {
+        overflow: hidden;
+
+        p {
+            i {
+                margin-right: 5px;
+            }
+        }
+
+        h5 {
+            margin-bottom: 3px;
+        }
+    }
+
+    .comment-reply-link {
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $fredoka;
+        padding: 10px 22px;
+        line-height: 1;
+        position: absolute;
+        background: $black;
+        z-index: 1;
+        right: 0;
+        top: 8px;
+        border-radius: 4px;
+
+        @media #{$xs} {
+            float: none;
+            margin-right: 0;
+            margin-top: 0;
+            position: relative;
+        }
+
+        &:hover {
+            color: $white;
+            background: $heding;
+        }
+    }
+}
+
+.comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding-bottom: 20px;
+        margin-bottom: 45px;
+    }
+}
+
+//comment
+
+.media-content {
+    background: #EAEAFF;
+    border-radius: 15px;
+    margin-top: 50px;
+
+    .social-links {
+        span {
+            color: $body-text-color;
+            font-size: 22px;
+            font-weight: 500;
+            font-family: $fredoka;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        a {
+            &:hover {
+                background: $theme-color2;
+            }
+        }
+    }
+}
