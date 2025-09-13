@@ -21,7 +21,7 @@ const Sheltersidebar = ({ isOpen }) => {
 
       <ul className="sidebar-menu">
         <li>
-          <Link to="/" className="menu-link">
+          <Link to="/shelter/dashboard" className="menu-link">
             <FaTachometerAlt className="menu-icon" />
             {isOpen && <span>Dashboard</span>}
           </Link>

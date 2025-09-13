@@ -35,7 +35,7 @@ const LoginShelter = () => {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/login_vets`, vetUser);
       if (response.data.success) {
         sessionStorage.setItem("vetesLogined", JSON.stringify(response.data.messege));
-        navigate("/vetes");
+        navigate("/vetes/dashboard");
       } else {
         toast.error(response.data.messege);
       }
@@ -66,7 +66,7 @@ const LoginShelter = () => {
       const response = await axios.post(`${import.meta.env.VITE_API_URL}/login_shelteranimal`, shelterUser);
       if (response.data.success) {
         sessionStorage.setItem("animalsehlterLogined", JSON.stringify(response.data.messege));
-        navigate("/shelter/index");
+        navigate("/shelter/dashboard");
       } else {
         toast.error(response.data.messege);
       }

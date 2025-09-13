@@ -57,6 +57,11 @@ import MyAppointments from "./Components/website/Myappointment";
 import Add_pets from "./Components/AnimalShelter/Add_pets";
 import AdoptList from "./Components/AnimalShelter/AdoptList";
 import ShelterpetsEdit from "./Components/AnimalShelter/ShelterpetsEdit";
+import Animaldashboard from "./Components/AnimalShelter/Animaldashboard";
+import Vetesdashboard from "./Components/vetesPanels/Vetesdashboard";
+
+import ListPet from "./components/ListPet";
+
 
 const App = () => {
   return (
@@ -143,6 +148,10 @@ const App = () => {
 
 <Route  element={<VetesprotectedRoutes/>} >
   <Route
+            path="/vetes/dashboard"
+            element={<Vetesdashboard/>}
+          ></Route>
+  <Route
             path="/vetes/profile"
             element={<VetesProfile/>}
           ></Route>
@@ -164,6 +173,10 @@ const App = () => {
           ></Route>
 </Route>
 <Route element={< Animalroutesprotected/>}>
+ <Route
+            path="/shelter/dashboard"
+            element={<Animaldashboard/>}
+          ></Route>
  <Route
             path="/shelter/index"
             element={<Shelter/>}
