@@ -8,13 +8,21 @@ var cors = require("cors");
 
 const cookieParser = require("cookie-parser");
 
-var allowedOrigin = ["http://localhost:5173"];
+var allowedOrigin = ["https://petcare-yk3u.vercel.app"];
 app.use(
   cors({
     origin: allowedOrigin,
     credentials: false,
   })
 );
+
+
+
+
+
+
+
+
 app.use(cookieParser());
 
 var ContactUs = require("./Models/Contact");
