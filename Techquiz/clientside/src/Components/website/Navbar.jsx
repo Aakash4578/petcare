@@ -50,17 +50,8 @@ function Navbar() {
 							<div class="main-menu d-none d-lg-block">
 								<nav id="mobile-menu">
 									<ul class="menu-list">
-										<Link to={"/appiontment"}>Appointment</Link>
 										<li><Link to={"/appiontment"}>Appointment</Link></li>
-										
-											
-												
-												
-												
-										
-										<li>
-											<a href="#l">Contact</a>
-										</li>
+										<li><Link to={"/contact"}>Contact us </Link></li>
 
 									</ul>
 								</nav>
