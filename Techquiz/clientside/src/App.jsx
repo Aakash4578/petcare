@@ -60,7 +60,7 @@ import ShelterpetsEdit from "./Components/AnimalShelter/ShelterpetsEdit";
 import Animaldashboard from "./Components/AnimalShelter/Animaldashboard";
 import Vetesdashboard from "./Components/vetesPanels/Vetesdashboard";
 
-import ListPet from "./components/ListPet";
+import ListPet from "./components/AnimalShelter/Listpets";
 
 
 const App = () => {
