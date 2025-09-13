@@ -1,19 +1,26 @@
-import React, { useState } from 'react'
-import Shelterlayout from './Shelterlayout'
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import React, { useState } from "react";
+import Shelterlayout from "./Shelterlayout";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Add_pets = () => {
-      // 🔹 Token se owner_id nikalna
+  // 🔹 Token se shelter_id nikalna (safe check ke sath)
   const userToken = sessionStorage.getItem("animalsehlterLogined");
-  const tokenParts = userToken.split(".");
-  const payload = JSON.parse(atob(tokenParts[1]));
-  const s = payload.id;
+  let s = "";
+  if (userToken) {
+    try {
+      const tokenParts = userToken.split(".");
+      const payload = JSON.parse(atob(tokenParts[1]));
+      s = payload.id;
+    } catch (err) {
+      console.error("Invalid token:", err);
+    }
+  }
 
   // 🔹 Form state
   const [form, setForm] = useState({
     name: "",
-    shelter_id:"",
+    shelter_id: "",
     species: "",
     breed: "",
     age: "",
@@ -23,7 +30,6 @@ const Add_pets = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
 
   // 🔹 Input change handler
   const handleChange = (e) => {
@@ -49,14 +55,15 @@ const Add_pets = () => {
     }
 
     if (!form.gender.trim()) newErrors.gender = "Gender is required";
-if (!form.pet_img) {
-  newErrors.pet_img = "Pet image is required";
-} else {
-  const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
-  if (!allowedTypes.includes(form.pet_img.type)) {
-    newErrors.pet_img = "Only JPG, PNG, or GIF images are allowed";
-  }
-}
+
+    if (!form.pet_img) {
+      newErrors.pet_img = "Pet image is required";
+    } else {
+      const allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/gif"];
+      if (!allowedTypes.includes(form.pet_img.type)) {
+        newErrors.pet_img = "Only JPG, PNG, or GIF images are allowed";
+      }
+    }
     return newErrors;
   };
 
@@ -65,7 +72,6 @@ if (!form.pet_img) {
     e.preventDefault();
     setIsSubmitting(true);
     setErrors({});
-    setSuccessMessage("");
 
     const newErrors = validateForm();
     if (Object.keys(newErrors).length > 0) {
@@ -75,7 +81,7 @@ if (!form.pet_img) {
     }
 
     const formData = new FormData();
-    formData.append("shelter_id", s); // JWT se owner_id
+    formData.append("shelter_id", s);
     formData.append("name", form.name);
     formData.append("species", form.species);
     formData.append("breed", form.breed);
@@ -88,7 +94,9 @@ if (!form.pet_img) {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      toast.success("the pet  is added now");
+      toast.success("Pet is added successfully ✅");
+
+      // Reset form
       setForm({
         name: "",
         species: "",
@@ -97,6 +105,7 @@ if (!form.pet_img) {
         gender: "",
         pet_img: null,
       });
+      document.querySelector('input[name="pet_img"]').value = ""; // reset file input
     } catch (err) {
       setErrors({ api: err.response?.data?.message || err.message });
     }
@@ -105,128 +114,114 @@ if (!form.pet_img) {
   };
 
   return (
-    <div><Shelterlayout/>
-    <div className="container my-5 d-flex justify-content-center" style={{ maxWidth: "600px" }}>
-         <div
-          className="card shadow p-4"
-          style={{ maxWidth: "600px", width: "100%" }}
-        >
-        <h2 className="mb-4 text-center">Add New Pet</h2>
-        <form onSubmit={handleSubmit}>
-          {/* Pet Name */}
-          <div className="mb-3">
-            <label className="form-label">Pet Name</label>
-            <input
-              name="name"
-              className="form-control"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Pet Name"
-            />
-            {errors.name && (
-              <div className="text-danger mt-1">{errors.name}</div>
-            )}
-          </div>
+    <div>
+      <Shelterlayout />
+      <div
+        className="container my-5 d-flex justify-content-center"
+        style={{ maxWidth: "600px" }}
+      >
+        <div className="card shadow p-4" style={{ maxWidth: "600px", width: "100%" }}>
+          <h2 className="mb-4 text-center">Add New Pet</h2>
+          <form onSubmit={handleSubmit}>
+            {/* Pet Name */}
+            <div className="mb-3">
+              <label className="form-label">Pet Name</label>
+              <input
+                name="name"
+                className="form-control"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Pet Name"
+              />
+              {errors.name && <div className="text-danger mt-1">{errors.name}</div>}
+            </div>
 
-          {/* Species */}
-          <div className="mb-3">
-            <label className="form-label">Species</label>
-            <input
-              name="species"
-              className="form-control"
-              value={form.species}
-              onChange={handleChange}
-              placeholder="Species"
-            />
-            {errors.species && (
-              <div className="text-danger mt-1">{errors.species}</div>
-            )}
-          </div>
+            {/* Species */}
+            <div className="mb-3">
+              <label className="form-label">Species</label>
+              <input
+                name="species"
+                className="form-control"
+                value={form.species}
+                onChange={handleChange}
+                placeholder="Species"
+              />
+              {errors.species && <div className="text-danger mt-1">{errors.species}</div>}
+            </div>
 
-          {/* Breed */}
-          <div className="mb-3">
-            <label className="form-label">Breed</label>
-            <input
-              name="breed"
-              className="form-control"
-              value={form.breed}
-              onChange={handleChange}
-              placeholder="Breed"
-            />
-            {errors.breed && (
-              <div className="text-danger mt-1">{errors.breed}</div>
-            )}
-          </div>
+            {/* Breed */}
+            <div className="mb-3">
+              <label className="form-label">Breed</label>
+              <input
+                name="breed"
+                className="form-control"
+                value={form.breed}
+                onChange={handleChange}
+                placeholder="Breed"
+              />
+              {errors.breed && <div className="text-danger mt-1">{errors.breed}</div>}
+            </div>
 
-          {/* Age */}
-          <div className="mb-3">
-            <label className="form-label">Age</label>
-            <input
-              name="age"
-              className="form-control"
-              value={form.age}
-              onChange={handleChange}
-              placeholder="Age"
-              type="number"
-            />
-            {errors.age && (
-              <div className="text-danger mt-1">{errors.age}</div>
-            )}
-          </div>
+            {/* Age */}
+            <div className="mb-3">
+              <label className="form-label">Age</label>
+              <input
+                name="age"
+                className="form-control"
+                value={form.age}
+                onChange={handleChange}
+                placeholder="Age"
+                type="number"
+              />
+              {errors.age && <div className="text-danger mt-1">{errors.age}</div>}
+            </div>
 
-          {/* Gender */}
-          <div className="mb-3">
-            <label className="form-label">Gender</label>
-            <select
-              name="gender"
-              className="form-select"
-              value={form.gender}
-              onChange={handleChange}
-            >
-              <option value="">Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select>
-            {errors.gender && (
-              <div className="text-danger mt-1">{errors.gender}</div>
-            )}
-          </div>
+            {/* Gender */}
+            <div className="mb-3">
+              <label className="form-label">Gender</label>
+              <select
+                name="gender"
+                className="form-select"
+                value={form.gender}
+                onChange={handleChange}
+              >
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              {errors.gender && <div className="text-danger mt-1">{errors.gender}</div>}
+            </div>
 
-          {/* Pet Image */}
-          <div className="mb-3">
-            <label className="form-label">Pet Image</label>
-            <input
-              type="file"
-              name="pet_img"
-              className="form-control"
-              onChange={handleChange}
-            />
-            {errors.pet_img && (
-              <div className="text-danger mt-1">{errors.pet_img}</div>
-            )}
-          </div>
+            {/* Pet Image */}
+            <div className="mb-3">
+              <label className="form-label">Pet Image</label>
+              <input
+                type="file"
+                name="pet_img"
+                className="form-control"
+                onChange={handleChange}
+              />
+              {errors.pet_img && <div className="text-danger mt-1">{errors.pet_img}</div>}
+            </div>
 
-          {/* Submit */}
-          <div className="text-end">
-            <button
-              type="submit"
-              className="btn btn-primary px-4"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Add Pet"}
-            </button>
-          </div>
+            {/* Submit */}
+            <div className="text-end">
+              <button
+                type="submit"
+                className="btn btn-primary px-4"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Submitting..." : "Add Pet"}
+              </button>
+            </div>
 
-          {/* API error / Success */}
-          {errors.api && <div className="text-danger mt-2">{errors.api}</div>}
-          {successMessage && (
-            <div className="text-success mt-2">{successMessage}</div>
-          )}
-        </form>
-</div>
+            {/* API error */}
+            {errors.api && <div className="text-danger mt-2">{errors.api}</div>}
+          </form>
+        </div>
+      </div>
     </div>
-     </div>
-  )
-}
+  );
+};
 
-export default Add_pets
+export default Add_pets;
