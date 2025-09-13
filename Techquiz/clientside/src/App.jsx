@@ -6,7 +6,7 @@ import Home from "./Components/website/Home";
 import UserProtectedRoute from "./Components/Auth/UserProtectedRoute";
 import UserProfile from "./Components/website/UserProfile";
 import Contactus from "./Components/website/Contactus";
-import Admin_Index from "./Components/AdminPanel/Admin_Index";
+// import Admin_Index from "./Components/AdminPanel/Admin_Index";
 import UserDetails from "./Components/AdminPanel/UserDetails";
 import Dashboard from "./Components/AdminPanel/Dashboard";
 import ContactTable from "./Components/AdminPanel/ContactTable";
@@ -23,7 +23,7 @@ import Add_product from "./Components/AdminPanel/Add_product";
 import ProductsTable from "./Components/AdminPanel/ProductsTable";
 import Viewproducts from "./Components/AdminPanel/Viewproducts";
 import EditProduct from "./Components/AdminPanel/Editproducts";
-import Veterinarian from "./Components/AdminPanel/Veterinarian"; // ✅
+import Veterinarian from "./Components/AdminPanel/Veterinarian ";
 import Add_veterinarians from "./Components/AdminPanel/Add_veterinarians";
 import AnimalShelter from "./Components/AdminPanel/AnimalShelter";
 import Add_AnimalShelter from "./Components/AdminPanel/Add_AnimalShelter";
@@ -37,11 +37,11 @@ import Vieworders from "./Components/AdminPanel/Vieworders";
 import Orderdetails from "./Components/website/Orderdetails";
 import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
-// Corrected
-import LoginShelter from "./Components/Auth/LoginShelter";
-import VetesprotectedRoutes from "./Components/vetesPanels";
+import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes"
+import VetesprotectedRoutes from "./Components/vetesPanels/VetesprotectedRoutes"
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
-import Veteindex from "./Components/vetesPanels/Veteindex"
+import Veteindex from "./Components/vetesPanels/Veteindex";
+import VetesProfile from "./Components/vetesPanels/VetesProfile"
 import UpdatePet from "./Components/website/UpdatePet";
 import Appointment from "./Components/website/Appointment";
 import Vetesappointment from "./Components/vetesPanels/Vetesappointment";
@@ -51,7 +51,7 @@ import EditRecord from "./Components/vetesPanels/EditRecord";
 import Animalroutesprotected from "./Components/AnimalShelter/Animalroutesprotected"
 import Shelterlayout from "./Components/AnimalShelter/Shelterlayout";
 import Shelter from "./Components/AnimalShelter/Shelter";
-import Shelterprofile from "./Components/AnimalShelter/shelterprofile";
+import Shelterprofile from "./Components/AnimalShelter/Shelterprofile";
 import Heathhistory from "./Components/website/Heathhistory";
 import MyAppointments from "./Components/website/Myappointment";
 const App = () => {
@@ -61,9 +61,11 @@ const App = () => {
         <Route path="/" element={<Home />}></Route>
 <Route path="/website/products" element={<Products/>}></Route>
           
-      <Route path="website/ProductData/:id" element={<WerbsiteProductData/>}></Route>         
+      <Route path="website/ProductData/:id" element={<WerbsiteProductData/>}></Route> 
+     
+        
         <Route path="/login" element={<LoginRegister />}></Route>
-        <Route path="/loginforvetesShelter" element={<LoginShelter />} />
+        <Route path="/loginforvetesShelter" element={<Loginforshelterandvetes/>}></Route>
 
         <Route path="/contact" element={<Contactus />}></Route>
         <Route path="/Email-verify" element={<Emailverify />}></Route>
@@ -131,7 +133,10 @@ const App = () => {
             path="/admin/add_Animalshelter"
             element={<Add_AnimalShelter></Add_AnimalShelter>}
           ></Route>
+        
         </Route>
+        
+
 <Route  >
   <Route
             path="/vetes/profile"
