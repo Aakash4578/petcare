@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 const AdoptList = () => {
+
+
+   const userToken = sessionStorage.getItem("animalsehlterLogined");
+  const tokenParts = userToken.split(".");
+  const payload = JSON.parse(atob(tokenParts[1]));
+  const s = payload.id;
   var [user, SetUserData] = useState([]);
           function userFetch() {
             axios.get(`${import.meta.env.VITE_API_URL}/api/adoption-requests`).then((res) => {
@@ -40,7 +46,7 @@ const AdoptList = () => {
           });
              var statusUpdate=(id)=>{
            axios.put(`${import.meta.env.VITE_API_URL}/${id}`).then(() => {
-              toast.success("The appointment status is updated now !", {
+              toast.success("The adopt  status is updated now !", {
                 position: "top-right",
               });
             });
