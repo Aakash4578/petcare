@@ -41,7 +41,6 @@ import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes"
 import VetesprotectedRoutes from "./Components/vetesPanels/VetesprotectedRoutes"
 import VetesProfile from "./Components/vetesPanels/VetesProfile";
 import Veteindex from "./Components/vetesPanels/Veteindex";
-import VetesProfile from "./Components/vetesPanels/VetesProfile"
 import UpdatePet from "./Components/website/UpdatePet";
 import Appointment from "./Components/website/Appointment";
 import Vetesappointment from "./Components/vetesPanels/Vetesappointment";
