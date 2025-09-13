@@ -8,6 +8,7 @@ import { FaPhoneFlip ,FaUserDoctor} from "react-icons/fa6";
 import { BsBoxes } from "react-icons/bs";
 import { MdOutlineAddHomeWork ,MdOutlineShoppingCart} from "react-icons/md";
 import { MdOutlineHealthAndSafety } from "react-icons/md";
+import { MdOutlinePets } from "react-icons/md";
 
 import { BiCategoryAlt } from "react-icons/bi";
 import { TfiHeadphoneAlt } from "react-icons/tfi";
@@ -27,16 +28,16 @@ const Sheltersidebar = ({ isOpen }) => {
         </li>
          
      <li>
-          <Link to="/vetes/app" className="menu-link">
-            <FaUserDoctor  className="menu-icon" />
-            {isOpen && <span>Appointments</span>}
+          <Link to="/shelter/pets" className="menu-link">
+            <MdOutlinePets  className="menu-icon" />
+            {isOpen && <span>pets</span>}
           </Link>
           
         </li>
          <li>
-          <Link to="/vetes/healthReacord" className="menu-link">
+          <Link to="/shelter/adoplist" className="menu-link">
             <MdOutlineHealthAndSafety  className="menu-icon" />
-            {isOpen && <span>Health Record</span>}
+            {isOpen && <span>Adopt List</span>}
           </Link>
           
         </li>

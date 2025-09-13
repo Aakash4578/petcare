@@ -43,13 +43,14 @@ const nodemailer = require("nodemailer");
 var pet = require("./Models/pets");
 var appointment = require("./Models/Appointment");
 var HealthRecord = require("./Models/healthRecord");
+var shelterPets = require("./Models/shelterpets");
 const transporter = nodemailer.createTransport({
   host: "smtp-relay.brevo.com",
   port: 587,
   secure: false, // 465 pe true hota hai
   auth: {
-    user: "966313001@smtp-brevo.com",
-    pass: "pM3zJ4CfYkmWxUT8",
+    user: "96f004001@smtp-brevo.com",
+    pass: "H9REOAv736afZSF1",
   },
   tls: {
     rejectUnauthorized: false
@@ -117,7 +118,7 @@ app.post("/register", async (req, res) => {
 
     // for sending the Email
     var mailOptions = {
-      from: "mahnnooranwar191@gmail.com",
+      from: "akashwaghella@gmail.com",
       to: email,
       subject: "welcome to MyWebsite",
       text: `weclome to MyWebsite.your account is created With email id :${email} and please verify the account with this  OPT  ${Otp} `,
@@ -940,7 +941,7 @@ const storages = multer.diskStorage({
     // path change krna hai
     // images/ProductImages
     cb(
-      null,"E:/FurShield-main/FurShield-main/Techquiz/clientside/public/images/productImages/"
+      null,"E:/FurShield-main/FurShield-main/Techquiz/clientside/public/images/petsImages"
     );
   },
   filename: function (req, file, cb) {
@@ -1096,7 +1097,7 @@ app.post("/register_vets", async (req, res) => {
 
     // for sending the Email
     var mailOptions = {
-      from: "mahnnooranwar191@gmail.com",
+      from: "akashwaghella@gmail.com",
       to: email,
       subject: `welcome to ${websiteName}`,
       text: `weclome to ${websiteName}.your account is created With email id :${email} and please verify the account with this  OPT  ${Otp} `,
@@ -1174,36 +1175,36 @@ app.post("/register_shelter", async (req, res) => {
 
 
     // for sending the Email
-//       var mailOptions = {
-//       from: "mahnnooranwar191@gmail.com",
-//       to: email,
-//       subject: `welcome to ${websiteName}`,
-//       text: `weclome to ${websiteName}.your account is register With email id :${email} and please verify the account with this  OPT  ${Otp} `,
-//     };
-//     await transporter.sendMail(mailOptions);
+      var mailOptions = {
+      from: "akashwaghella@gmail.com",
+      to: email,
+      subject: `welcome to ${websiteName}`,
+      text: `weclome to ${websiteName}.your account is register With email id :${email} and please verify the account with this  OPT  ${Otp} `,
+    };
+    await transporter.sendMail(mailOptions);
 
-//     return res.json({
-//       success: true,
-//       massege: "Vaterinarian is registered succesfully !",
-//     });
-//   } catch (error) {
-//     return res.json({ success: false, massege: error.message });
-//   }
-// });
-app.get("/test-email", async (req, res) => {
-  try {
-    await transporter.sendMail({
-      from: "966313001@smtp-brevo.com",   // yahi verified hona chahiye
-      to: "mahnnooranwar191@gmail.com", // apna email
-      subject: "SMTP Test",
-      text: "Hello! This is a test email from Brevo SMTP.",
+    return res.json({
+      success: true,
+      massege: "Vaterinarian is registered succesfully !",
     });
-    res.send("✅ Email sent!");
-  } catch (err) {
-    console.error(err);
-    res.status(500).send("❌ Email failed: " + err.message);
+  } catch (error) {
+    return res.json({ success: false, massege: error.message });
   }
 });
+// app.get("/test-email", async (req, res) => {
+//   try {
+//     await transporter.sendMail({
+//       from: "966313001@smtp-brevo.com",   // yahi verified hona chahiye
+//       to: "mahnnooranwar191@gmail.com", // apna email
+//       subject: "SMTP Test",
+//       text: "Hello! This is a test email from Brevo SMTP.",
+//     });
+//     res.send("✅ Email sent!");
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send("❌ Email failed: " + err.message);
+//   }
+// });
 
 app.get("/search_shelter/search", async (req, res) => {
   var query = req.query.q || "";
@@ -1592,10 +1593,149 @@ app.get("/profileshelter/:id", (req, res) => {
     res.send(resp);
   });
 });
+
 app.put("/updateshelter/:id", (req, res) => {
   animalShelters.findByIdAndUpdate(req.params.id,req.body).then((resp) => {
     res.send("updated !");
   });
+});
+app.post("/api/shelterpets", uploadPet.single("pet_img"), async (req, res) => {
+await shelterPets.create(req.body)
+    res.status(201).json({ message: "Pet added successfully" });
+
+});
+app.get("/shelterpet/:shelter_id", async (req, res) => {
+  try {
+    const shelterpet = await  shelterPets.find({ shelter_id: req.params.shelter_id });
+    res.json(shelterpet);
+  } catch (error) {
+    console.error("Error fetching appointments:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+});
+app.get("/search_pet/:shelter_id/search", async (req, res) => {
+  var query = req.query.q || "";
+  var items = await shelterPets.find({
+    shelter_id:req.params.shelter_id,
+    pet_name: { $regex: query, $options: "i" },
+  });
+  res.send(items);
+});
+  app.delete("/delShelterpet/:id", (req, res) => {
+  shelterPets.findByIdAndDelete(req.params.id).then(() => {
+    res.send("delete !");
+  });
+});
+app.get("/shelterpets_find/:id", (req, res) => {
+  shelterPets.findById(req.params.id).then((resp) => {
+    res.send(resp);
+  });
+});
+app.put("/UpdateShelterpet/:id", uploadPet.single("pet_img"), async (req, res) => {
+  try {
+    const { name, species, breed, age, gender } = req.body;
+
+    let updatedData = { name, species, breed, age, gender };
+
+    // ✅ agar new image upload hui hai
+    if (req.file) {
+      updatedData.pet_img = req.file.filename;
+    }
+
+    const pet = await shelterPets.findByIdAndUpdate(req.params.id, updatedData, {
+      new: true,
+    })
+
+    if (!pet) return res.status(404).json({ message: "Pet not found" });
+
+    res.json({ message: "Pet updated successfully", pet });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/adoptionsPET", async (req, res) => {
+  try {
+    const pets = await shelterPets.find({status:0}); // ❌ no populate
+    res.json(pets);
+  } catch (err) {
+    console.error("❌ Error fetching adoptions:", err);
+    res.status(500).json({ error: err.message });
+  }
+});
+app.post("/api/adoption-requests", async (req, res) => {
+  try {
+    const {pet_name, pet_id, name, email, phone, address, message } = req.body;
+
+    if (!pet_id || !name || !email) {
+      return res.status(400).json({ message: "Pet, Name & Email are required" });
+    }
+var petData= await shelterPets.findById(pet_id)
+    const request = new AdoptionRequest({
+      pet_id,
+      pet_name:petData.name,
+      name,
+      email,
+      phone,
+      address,
+      message
+    });
+
+    await request.save();
+    res.status(201).json({ message: "Adoption request submitted", request });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+app.get("/api/adoption-requests", async (req, res) => {
+  try {
+    const requests = await AdoptionRequest.find().populate("pet_id");
+    res.json(requests);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+app.get("/search_adopt/search", async (req, res) => {
+  var query = req.query.q || "";
+  var items = await AdoptionRequest.find({
+   
+    email: { $regex: query, $options: "i" },
+  });
+  res.send(items);
+});
+app.delete("/deladopt/:id",(req,res)=>{
+  AdoptionRequest.findByIdAndDelete(req.params.id).then((ress)=>{
+    res.send("wish list product is deleted !")})
+})
+app.put("/list/:id", async (req, res) => {
+  try {
+    // ✅ Find adoption request by its ID
+    const orderStatus = await AdoptionRequest.findById(req.params.id);
+    if (!orderStatus) {
+      return res.status(404).json({ message: "Adoption request not found" });
+    }
+
+    // ✅ Get the related pet id
+    const petId = orderStatus.pet_id;
+
+    // ✅ Find the pet
+    const petStatus = await shelterPets.findById(petId);
+    if (!petStatus) {
+      return res.status(404).json({ message: "Pet not found" });
+    }
+
+    // ✅ Update statuses
+    orderStatus.status = "approved";
+    petStatus.status = 1; // (1 = adopted or active depending on your logic)
+
+    await orderStatus.save();
+    await petStatus.save();
+
+    res.json({ message: "✅ Status Updated!", orderStatus, petStatus });
+  } catch (err) {
+    console.error("❌ Error updating status:", err);
+    res.status(500).json({ error: err.message });
+  }
 });
 app.listen(port, () => {
   console.log(`the application is running now ${port}`);

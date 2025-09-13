@@ -39,10 +39,11 @@ import Mypet from "./Components/website/Mypet";
 import Add_pet from "./Components/website/Add_pet";
 import Loginforshelterandvetes from "./Components/Auth/Loginforshelterandvetes"
 import VetesprotectedRoutes from "./Components/vetesPanels/VetesprotectedRoutes"
-import VetesProfile from "./Components/vetesPanels/VetesProfile";
-import Veteindex from "./Components/vetesPanels/Veteindex";
-import UpdatePet from "./Components/website/UpdatePet";
-import Appointment from "./Components/website/Appointment";
+// import VetesProfile from "./Components/vetesPanels/VetesProfile";
+// import Veteindex from "./Components/vetesPanels/Veteindex";
+// import VetesProfile from "./Components/vetesPanels/VetesProfile"
+// import UpdatePet from "./Components/website/UpdatePet";
+// import Appointment from "./Components/website/Appointment";
 import Vetesappointment from "./Components/vetesPanels/Vetesappointment";
 import Healthrecord from "./Components/vetesPanels/Healthrecord";
 import Addheathrecord from "./Components/vetesPanels/Addheathrecord";
@@ -53,6 +54,10 @@ import Shelter from "./Components/AnimalShelter/Shelter";
 import Shelterprofile from "./Components/AnimalShelter/Shelterprofile";
 import Heathhistory from "./Components/website/Heathhistory";
 import MyAppointments from "./Components/website/Myappointment";
+import Add_pets from "./Components/AnimalShelter/Add_pets";
+import AdoptList from "./Components/AnimalShelter/AdoptList";
+import ShelterpetsEdit from "./Components/AnimalShelter/ShelterpetsEdit";
+
 const App = () => {
   return (
     <div>
@@ -136,14 +141,14 @@ const App = () => {
         </Route>
         
 
-<Route  >
+<Route  element={<VetesprotectedRoutes/>} >
   <Route
             path="/vetes/profile"
             element={<VetesProfile/>}
           ></Route>
           <Route
             path="/vetes/app"
-            element={<Vetesappointment/>}
+            element={<Veteappointment/>}
           ></Route>
           <Route
             path="/vetes/healthReacord"
@@ -166,6 +171,22 @@ const App = () => {
            <Route
             path="/shelter/profile"
             element={<Shelterprofile/>}
+          ></Route>
+           <Route
+            path="/shelter/pets"
+            element={<ListPet/>}
+          ></Route>
+           <Route
+            path="/shelter/addpets"
+            element={<Add_pets/>}
+          ></Route>
+           <Route
+            path="/shelter/editPet/:id"
+            element={<ShelterpetsEdit/>}
+          ></Route>
+           <Route
+            path="/shelter/adoplist"
+            element={<AdoptList/>}
           ></Route>
 </Route>
       </Routes>
